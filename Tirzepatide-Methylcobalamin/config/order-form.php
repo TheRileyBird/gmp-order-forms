@@ -101,7 +101,115 @@ class Order_Form extends Helper_Abstract_Config_Settings implements Helper_Inter
 					'type'       => 'text',
 					'inputClass' => 'merge-tag-support mt-hide_all_fields',
 				],
-
+                
+                // Form Section
+                'order_form_prescription_section' => [
+                    'id'    => 'order_form_prescription_section',
+                    'type'  => 'descriptive_text',
+                    'desc'  => '<h2>' . esc_html__( 'Prescription Section', 'gravity-pdf' ) . '</h2>',
+                    'class' => 'gfpdf-no-padding',
+                ],
+                
+                'order_form_methylcobalamin' => [
+                    'id'         => 'order_form_methylcobalamin',
+                    'name'       => esc_html__( 'Methylcobalamin', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_b12_options' => [
+                    'id'         => 'order_form_b12_options',
+                    'name'       => esc_html__( 'B12 Options', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_b12_other' => [
+                    'id'         => 'order_form_b12_other',
+                    'name'       => esc_html__( 'B12 Other', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_month_1' => [
+                    'id'         => 'order_form_month_1',
+                    'name'       => esc_html__( 'Month 1', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill_1' => [
+                    'id'         => 'order_form_refill_1',
+                    'name'       => esc_html__( 'Refill 1', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_month_2' => [
+                    'id'         => 'order_form_month_2',
+                    'name'       => esc_html__( 'Month 2', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill_2' => [
+                    'id'         => 'order_form_refill_2',
+                    'name'       => esc_html__( 'Refill 2', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_month_3' => [
+                    'id'         => 'order_form_month_3',
+                    'name'       => esc_html__( 'Month 3', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill_3' => [
+                    'id'         => 'order_form_refill_3',
+                    'name'       => esc_html__( 'Refill 3', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_month_4' => [
+                    'id'         => 'order_form_month_4',
+                    'name'       => esc_html__( 'Month 4', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill_4' => [
+                    'id'         => 'order_form_refill_4',
+                    'name'       => esc_html__( 'Refill 4', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_month_5' => [
+                    'id'         => 'order_form_month_5',
+                    'name'       => esc_html__( 'Month 5', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill_5' => [
+                    'id'         => 'order_form_refill_5',
+                    'name'       => esc_html__( 'Refill 5', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_month_6' => [
+                    'id'         => 'order_form_month_6',
+                    'name'       => esc_html__( 'Month 6', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill_6' => [
+                    'id'         => 'order_form_refill_6',
+                    'name'       => esc_html__( 'Refill 6', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                // Prescriber Section
 				'order_form_prescriber_section' => [
 					'id'    => 'order_form_prescriber_section',
 					'type'  => 'descriptive_text',

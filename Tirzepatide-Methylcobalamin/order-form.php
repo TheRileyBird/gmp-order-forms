@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Order Form
+ * Template Name: Tirzepatide-Methylcobalamin
  * Version: 1.0
- * Description: A universal template that includes a fixed header/footer with patient and providing information
+ * Description: A Tirzepatide-Methylcobalamin template that includes a fixed header/footer with patient and providing information
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -57,6 +57,29 @@ $signature                 = $gform->process_tags( $settings['order_form_prescri
 
 $billing_options = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
 $billing_options = array_map( 'trim', explode( ',', $billing_options ) );
+
+$methylcobalamin = $gform->process_tags( $settings['order_form_methylcobalamin'] ?? '', $form, $entry );
+$b12_options = $gform->process_tags( $settings['order_form_b12_options'] ?? '', $form, $entry );
+$b12_options = array_map( 'trim', explode( ',', $b12_options ) );
+$b12_other = $gform->process_tags( $settings['order_form_b12_other'] ?? '', $form, $entry );
+
+$month_1 = $gform->process_tags( $settings['order_form_month_1'] ?? '', $form, $entry );
+$refill_1 = $gform->process_tags( $settings['order_form_refill_1'] ?? '', $form, $entry );
+
+$month_2 = $gform->process_tags( $settings['order_form_month_2'] ?? '', $form, $entry );
+$refill_2 = $gform->process_tags( $settings['order_form_refill_2'] ?? '', $form, $entry );
+
+$month_3 = $gform->process_tags( $settings['order_form_month_3'] ?? '', $form, $entry );
+$refill_3 = $gform->process_tags( $settings['order_form_refill_3'] ?? '', $form, $entry );
+
+$month_4 = $gform->process_tags( $settings['order_form_month_4'] ?? '', $form, $entry );
+$refill_4 = $gform->process_tags( $settings['order_form_refill_4'] ?? '', $form, $entry );
+
+$month_5 = $gform->process_tags( $settings['order_form_month_5'] ?? '', $form, $entry );
+$refill_5 = $gform->process_tags( $settings['order_form_refill_5'] ?? '', $form, $entry );
+
+$month_6 = $gform->process_tags( $settings['order_form_month_6'] ?? '', $form, $entry );
+$refill_6 = $gform->process_tags( $settings['order_form_refill_6'] ?? '', $form, $entry );
 
 /*
  * Load our core-specific styles from our PDF settings which will be passed to the PDF template $config array
@@ -522,9 +545,107 @@ $html_config = [
 
 <!-- Content -->
 <?php
-$pdf = GPDFAPI::get_pdf_class();
-$pdf->process_html_structure( $entry, GPDFAPI::get_pdf_class( 'model' ), $html_config );
-?>
+// $pdf = GPDFAPI::get_pdf_class();
+// $pdf->process_html_structure( $entry, GPDFAPI::get_pdf_class( 'model' ), $html_config );
+// ?>
+
+<htmlpagecontent>
+    <div id="methylcobalamin"><?php if ( $methylcobalamin ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10060;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of methylcobalamin is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
+
+    <div id="b12_options">
+        <?php
+            $b12_choices = [
+                    'b12-deficiency'    => 'B12 deficiency',
+                    'b12-fatigue'       => 'Fatigue',
+                    'b12-nausea'        => 'Nausea',
+                    'b12-other'         => 'Other',
+            ];
+
+            foreach ( $b12_choices as $id => $label ) {
+                if ( in_array( $label, $b12_options, true ) ) {
+                    echo '<span class="box" id="' . esc_attr( $id ) . '">&#10004;</span> &nbsp;';
+                }
+            }
+        ?>
+        <span id="b12_other"><?php echo esc_html( $b12_other ) ?></span>
+    </div>
+
+    <div id="attestation-signature">Prescriber Attestation Signature:
+    <?php if ( ! empty( $signature ) ) {
+        echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
+    }
+    ?>
+    </div>
+    <div id="attestation-date">Date: <?php echo esc_html( $date ) ?></div>
+
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+        <tr style="background-color: #f7f7f7;">
+            <th style="border: 2px solid #000; padding: 8px; text-align: left;">Check below to prescribe</th>
+            <th style="border: 2px solid #000; padding: 8px; text-align: left;"># of Refills</th>
+            <th style="border: 2px solid #000; padding: 8px; text-align: left;">Combination Dosage</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_1 ) ?></td>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_1 ) ?></td>
+            <td style="border: 2px solid #000; padding: 8px;">
+                <strong>Month 1</strong><br>
+                Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
+                <em>Inject 12 units (2mg) subcutaneously every week.</em>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_2 ) ?></td>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_2 ) ?></td>
+            <td style="border: 2px solid #000; padding: 8px;">
+                <strong>Month 2</strong><br>
+                Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
+                <em>Inject 24 units (4mg) subcutaneously every week.</em>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_3 ) ?></td>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_3 ) ?></td>
+            <td style="border: 2px solid #000; padding: 8px;">
+                <strong>Month 3</strong><br>
+                Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
+                <em>Inject 36 units (6mg) subcutaneously every week.</em>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_4 ) ?></td>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_4 ) ?></td>
+            <td style="border: 2px solid #000; padding: 8px;">
+                <strong>Month 4</strong><br>
+                Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
+                <em>Inject 51 units (8.5mg) subcutaneously every week.</em>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_5 ) ?></td>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_5 ) ?></td>
+            <td style="border: 2px solid #000; padding: 8px;">
+                <strong>Month 5</strong><br>
+                Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
+                <em>Inject 67 units (11.22mg) subcutaneously every week.</em>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_6 ) ?></td>
+            <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_6 ) ?></td>
+            <td style="border: 2px solid #000; padding: 8px;">
+                <strong>Month 6</strong><br>
+                Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
+                <em>Inject 100 units (16.7mg) subcutaneously every week.</em>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</htmlpagecontent>
 
 <!-- Footer Questions -->
 <htmlpagefooter name="Footer">
