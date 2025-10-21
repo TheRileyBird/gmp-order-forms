@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Order_Form
+ * Class Tirzepatide_Methylcobalamin
  *
  * @package  GFPDF\Templates\Config
  *
  * @Internal See https://docs.gravitypdf.com/v6/install-template-via-template-manager for more information about this class
  */
-class Order_Form extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
+class Tirzepatide_Methylcobalamin extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
 
 	/**
 	 * Return the templates configuration structure which control what extra fields will be shown in the "Template" tab when configuring a form's PDF.
