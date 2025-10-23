@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Tirzepatide-Methylcobalamin
- * Version: 1.4
+ * Version: 1.7
  * Description: A Tirzepatide-Methylcobalamin template that includes a fixed header/footer with patient and providing information
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -517,6 +517,9 @@ $html_config = [
     .underline {
         text-decoration: underline;
     }
+    .bold {
+        font-weight: bold;
+    }
     .box {
         display: inline-block;
         width: 6mm;
@@ -574,13 +577,13 @@ $html_config = [
 
         foreach ( $b12_choices as $id => $label ) {
             if ( in_array( $label, $b12_options, true ) ) {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&#10004;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
+                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&#10004;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '&nbsp;</span> &nbsp;&nbsp;';
             } else {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
+                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&nbsp;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
             }
         }
     ?>
-    <?php if ( $b12_other ) : ?><span class="underline">&nbsp;&nbsp;<?php echo esc_html( $b12_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
+    <?php if ( $b12_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $b12_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
 <div id="attestation-signature">Prescriber Attestation Signature:
@@ -589,67 +592,67 @@ $html_config = [
 }
 ?>
 </div>
-<div id="attestation-date">Date: <?php echo esc_html( $date ) ?></div>
+<div id="attestation-date">Date: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $date ) ?>&nbsp;&nbsp;</span></div>
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
     <tr style="background-color: #f7f7f7;">
-        <th style="border: 2px solid #000; padding: 8px; text-align: left;">Check below to prescribe</th>
-        <th style="border: 2px solid #000; padding: 8px; text-align: left;"># of Refills</th>
-        <th style="border: 2px solid #000; padding: 8px; text-align: left;">Combination Dosage</th>
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;">Check below to prescribe</th>
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;"># of Refills</th>
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; text-align: center;">Combination Dosage</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_1 ) ?></td>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_1 ) ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_1 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <strong>Month 1</strong><br>
+            <span class="underline bold">Month 1</span><br>
             Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
             <em>Inject 12 units (2mg) subcutaneously every week.</em>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_2 ) ?></td>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_2 ) ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_2 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <strong>Month 2</strong><br>
+            <span class="underline bold">Month 2</span><br>
             Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
             <em>Inject 24 units (4mg) subcutaneously every week.</em>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_3 ) ?></td>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_3 ) ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_3 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <strong>Month 3</strong><br>
+            <span class="underline bold">Month 3</span><br>
             Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
             <em>Inject 36 units (6mg) subcutaneously every week.</em>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_4 ) ?></td>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_4 ) ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_4 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <strong>Month 4</strong><br>
+            <span class="underline bold">Month 4</span><br>
             Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
             <em>Inject 51 units (8.5mg) subcutaneously every week.</em>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_5 ) ?></td>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_5 ) ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_5 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <strong>Month 5</strong><br>
+            <span class="underline bold">Month 5</span><br>
             Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
             <em>Inject 67 units (11.22mg) subcutaneously every week.</em>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $month_6 ) ?></td>
-        <td style="border: 2px solid #000; height: 40px;"><?php echo esc_html( $refill_6 ) ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_6 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_6 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <strong>Month 6</strong><br>
+            <span class="underline bold">Month 6</span><br>
             Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
             <em>Inject 100 units (16.7mg) subcutaneously every week.</em>
         </td>
