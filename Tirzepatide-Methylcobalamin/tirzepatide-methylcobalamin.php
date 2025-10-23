@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Tirzepatide-Methylcobalamin
- * Version: 1.0
+ * Version: 1.4
  * Description: A Tirzepatide-Methylcobalamin template that includes a fixed header/footer with patient and providing information
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -509,6 +509,23 @@ $html_config = [
     height: 10mm;
     line-height: 10.8pt;
   }
+
+    /* Utility Classes */
+    .text-center {
+        text-align: center;
+    }
+    .underline {
+        text-decoration: underline;
+    }
+    .box {
+        display: inline-block;
+        width: 6mm;
+        height: 6mm;
+        border: 1px solid #000;
+        text-align: center;
+        line-height: 6mm;
+        font-size: 10pt;
+    }
 </style>
 
 <htmlpageheader name="Header">
@@ -544,14 +561,9 @@ $html_config = [
 </htmlpageheader>
 
 <!-- Content -->
-<?php
-// $pdf = GPDFAPI::get_pdf_class();
-// $pdf->process_html_structure( $entry, GPDFAPI::get_pdf_class( 'model' ), $html_config );
-// ?>
+<div class="text-center"><?php if ( $methylcobalamin ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10060;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of methylcobalamin is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
 
-<div id="methylcobalamin"><?php if ( $methylcobalamin ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10060;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of methylcobalamin is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
-
-<div id="b12_options">
+<div id="b12_options" class="text-center"><span class="underline">B12 Indications:</span> &nbsp;
     <?php
         $b12_choices = [
                 'b12-deficiency'    => 'B12 deficiency',
@@ -562,11 +574,13 @@ $html_config = [
 
         foreach ( $b12_choices as $id => $label ) {
             if ( in_array( $label, $b12_options, true ) ) {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&#10004;</span> &nbsp;';
+                echo '<span class="box" id="' . esc_attr( $id ) . '">&#10004;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
+            } else {
+                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
             }
         }
     ?>
-    <span id="b12_other"><?php echo esc_html( $b12_other ) ?></span>
+    <?php if ( $b12_other ) : ?><span class="underline">&nbsp;&nbsp;<?php echo esc_html( $b12_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
 <div id="attestation-signature">Prescriber Attestation Signature:
