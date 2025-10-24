@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Tirzepatide-Methylcobalamin
- * Version: 1.7
+ * Version: 1.85
  * Description: A Tirzepatide-Methylcobalamin template that includes a fixed header/footer with patient and providing information
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -45,12 +45,20 @@ $patient_dob               = $gform->process_tags( $settings['order_form_dob'] ?
 $patient_phone             = $gform->process_tags( $settings['order_form_phone'] ?? '', $form, $entry );
 $patient_street            = $gform->process_tags( $settings['order_form_street_address'] ?? '', $form, $entry );
 $patient_city_state_zip    = $gform->process_tags( $settings['order_form_city_state_zip'] ?? '', $form, $entry );
+$patient_city              = $gform->process_tags( $settings['order_form_patient_city'] ?? '', $form, $entry );
+$patient_state             = $gform->process_tags( $settings['order_form_patient_state'] ?? '', $form, $entry );
+$patient_zip               = $gform->process_tags( $settings['order_form_patient_zip'] ?? '', $form, $entry );
 $patient_allergies         = $gform->process_tags( $settings['order_form_allergies'] ?? '', $form, $entry );
+$billing                   = $gform->process_tags( $settings['order_form_billing'] ?? '', $form, $entry );
+$scripts                   = $gform->process_tags( $settings['order_form_scripts'] ?? '', $form, $entry );
 $prescriber_name           = $gform->process_tags( $settings['order_form_prescriber_name'] ?? '', $form, $entry );
 $prescriber_phone          = $gform->process_tags( $settings['order_form_prescriber_phone'] ?? '', $form, $entry );
 $prescriber_fax            = $gform->process_tags( $settings['order_form_prescriber_fax'] ?? '', $form, $entry );
 $prescriber_street         = $gform->process_tags( $settings['order_form_prescriber_street_address'] ?? '', $form, $entry );
 $prescriber_city_state_zip = $gform->process_tags( $settings['order_form_prescriber_city_state_zip'] ?? '', $form, $entry );
+$prescriber_city           = $gform->process_tags( $settings['order_form_prescriber_city'] ?? '', $form, $entry );
+$prescriber_state          = $gform->process_tags( $settings['order_form_prescriber_state'] ?? '', $form, $entry );
+$prescriber_zip            = $gform->process_tags( $settings['order_form_prescriber_zip'] ?? '', $form, $entry );
 $npi_dea                   = $gform->process_tags( $settings['order_form_prescriber_npi_dea'] ?? '', $form, $entry );
 $date                      = $gform->process_tags( $settings['order_form_prescriber_date'] ?? '', $form, $entry );
 $signature                 = $gform->process_tags( $settings['order_form_prescriber_signature'] ?? '', $form, $entry );
@@ -116,17 +124,6 @@ $html_config = [
 
 <!-- Include styles needed for the PDF -->
 <style>
-  @page {
-    margin: 89.4mm 21.5mm 56mm 21.5mm;
-    header: html_Header;
-    footer: html_Footer;
-
-    margin-header: 14.4mm;
-    margin-footer: 56mm;
-    background: url('<?php echo __DIR__ . "/images/Semaglutide-SL-Order-Form-background.png"; ?>') no-repeat 0 0;
-    background-image-resize: 6;
-  }
-
   /* Handle Gravity Forms CSS Ready Classes */
   .row-separator {
     clear: both;
@@ -311,18 +308,9 @@ $html_config = [
    * Form Title
    */
   #form-title {
-    position: absolute;
-    width: 173mm;
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 19pt;
-  }
-
-  /*
-   * Section Break
-   */
-  .gfpdf-section-description {
-    padding-bottom: 2mm;
   }
 
   /*
@@ -333,182 +321,10 @@ $html_config = [
     padding: 0;
   }
 
-  /*
-   * Independant Template Styles
-   */
-  /* Header Fields */
-  #patient-name {
-    top: 29.2mm;
-    left: 53mm;
-    width: 93.5mm;
-  }
-
-  #gender {
-    top: 29.2mm;
-    left: 163mm;
-    width: 24.5mm;
-  }
-
-  #date-of-birth {
-    top: 36mm;
-    left: 52mm;
-    width: 55.5mm;
-  }
-
-  #phone {
-    top: 36mm;
-    left: 122mm;
-    width: 65.5mm;
-  }
-
-  #address {
-    top: 43.2mm;
-    left: 43.5mm;
-    width: 143.5mm;
-  }
-
-  #city-state-zip {
-    top: 50mm;
-    left: 54.5mm;
-    width: 133.5mm;
-  }
-
-  #allergy {
-    top: 57mm;
-    left: 44.5mm;
-    width: 143.5mm;
-  }
-
-  /* Checkboxes */
-  #bill-clinic-patient-pickup,
-  #bill-clinic-clinic-pickup,
-  #bill-patient-patient-pickup,
-  #bill-clinic-mail-patient,
-  #bill-clinic-mail-clinic,
-  #bill-patient-mail-patient {
-    font-size: 23pt;
-    line-height: 23pt;
-    font-family: dejavusans
-  }
-
-  #bill-clinic-patient-pickup,
-  #bill-clinic-mail-patient {
-    left: 27.8mm;
-  }
-
-  #bill-clinic-clinic-pickup,
-  #bill-clinic-mail-clinic {
-    left: 82.3mm;
-  }
-
-  #bill-patient-patient-pickup,
-  #bill-patient-mail-patient {
-    left: 135.3mm;
-  }
-
-  #bill-clinic-patient-pickup,
-  #bill-clinic-clinic-pickup,
-  #bill-patient-patient-pickup {
-    top: 67mm;
-  }
-
-  #bill-clinic-mail-patient,
-  #bill-clinic-mail-clinic,
-  #bill-patient-mail-patient {
-    top: 75.5mm;
-  }
-
-  /* Footer Section */
-  #prescriber-name {
-    bottom: 41mm;
-    left: 54mm;
-    width: 136mm;
-  }
-
-  #office-phone {
-    bottom: 34mm;
-    left: 48.5mm;
-    width: 55mm;
-  }
-
-  #fax {
-    bottom: 34mm;
-    left: 112mm;
-    width: 78mm;
-  }
-
-  #prescriber-address {
-    bottom: 27mm;
-    left: 40mm;
-    width: 69mm;
-  }
-
-  #prescriber-city-state-zip {
-    bottom: 27mm;
-    left: 136.5mm;
-    width: 53mm;
-  }
-
-  #npi-dea {
-    bottom: 20mm;
-    left: 46mm;
-    width: 67mm;
-  }
-
-  #prescriber-date {
-    bottom: 20mm;
-    left: 125mm;
-    width: 65mm;
-  }
-
-  #prescriber-signature {
-    bottom: 13mm;
-    left: 60mm;
-    height: 15mm;
-  }
-
-  /* Shared Field CSS */
-  #patient-name,
-  #gender,
-  #date-of-birth,
-  #phone,
-  #address,
-  #city-state-zip,
-  #allergy,
-  #bill-clinic-patient-pickup,
-  #bill-clinic-clinic-pickup,
-  #bill-patient-patient-pickup,
-  #bill-clinic-mail-patient,
-  #bill-clinic-mail-clinic,
-  #bill-patient-mail-patient,
-  #prescriber-name,
-  #office-phone,
-  #fax,
-  #prescriber-address,
-  #prescriber-city-state-zip,
-  #npi-dea,
-  #prescriber-date,
-  #prescriber-signature {
-    position: absolute;
-  }
-
-  #patient-name,
-  #gender,
-  #date-of-birth,
-  #phone,
-  #address,
-  #city-state-zip,
-  #allergy,
-  #prescriber-name,
-  #office-phone,
-  #fax,
-  #prescriber-address,
-  #prescriber-city-state-zip,
-  #npi-dea,
-  #prescriber-date {
-    height: 10mm;
-    line-height: 10.8pt;
-  }
+    /* Table Classes */
+    /*td, th {*/
+    /*  vertical-align: middle; !* Centers vertically *!*/
+    /*}*/
 
     /* Utility Classes */
     .text-center {
@@ -517,8 +333,22 @@ $html_config = [
     .underline {
         text-decoration: underline;
     }
+    .bottomline {
+        border-bottom: 1px solid #000;
+        display: inline-block;
+        padding-bottom: 1mm;
+    }
     .bold {
         font-weight: bold;
+    }
+    .flex {
+        display: flex;
+    }
+    .flex-row {
+        flex-direction: row;
+    }
+    .items-center {
+        align-items: center;
     }
     .box {
         display: inline-block;
@@ -531,37 +361,43 @@ $html_config = [
     }
 </style>
 
-<htmlpageheader name="Header">
-	<!-- Form Title -->
-	<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : ''; ?></div> &nbsp;
+<!-- Form Title -->
+<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : ''; ?></div>
 
-	<!-- Header Questions -->
-	<div id="patient-name"><?php echo esc_html( $patient_name ) ?></div> &nbsp;
-	<div id="gender"><?php echo esc_html( $patient_gender ) ?></div> &nbsp;
-	<div id="date-of-birth"><?php echo esc_html( $patient_dob ) ?></div> &nbsp;
-	<div id="phone"><?php echo esc_html( $patient_phone ) ?></div> &nbsp;
-	<div id="address"><?php echo esc_html( $patient_street ) ?></div> &nbsp;
-	<div id="city-state-zip"><?php echo esc_html( $patient_city_state_zip ); ?></div> &nbsp;
-	<div id="allergy"><?php echo esc_html( $patient_allergies ) ?></div> &nbsp;
-
-	<!-- Checkboxes Header -->
-	<?php
-	$options = [
-		'bill-clinic-patient-pickup'  => 'Bill Clinic | Patient Pickup',
-		'bill-clinic-clinic-pickup'   => 'Bill Clinic | Clinic Pickup',
-		'bill-patient-patient-pickup' => 'Bill Patient | Patient Pickup',
-		'bill-clinic-mail-patient'    => 'Bill Clinic | Mail to Patient',
-		'bill-clinic-mail-clinic'     => 'Bill Clinic | Mail to Clinic',
-		'bill-patient-mail-patient'   => 'Bill Patient | Mail to Patient',
-	];
-
-	foreach ( $options as $id => $label ) {
-		if ( in_array( $label, $billing_options, true ) ) {
-			echo '<div id="' . esc_attr( $id ) . '">&#10004;</div> &nbsp;';
-		}
-	}
-	?>
-</htmlpageheader>
+<!-- Patient Information Table -->
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="border: 2px solid #000; padding: 6px; width: 60%;"><strong>Patient Name:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_name ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px; width: 40%;"><strong>Date:</strong>&nbsp;&nbsp;<?php echo esc_html( $date ) ?></td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>Mobile Number:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_phone ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>DOB:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_dob ) ?></td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>Drug Allergies:&nbsp;&nbsp;<?php echo esc_html( $patient_allergies ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>Gender:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_gender ) ?></td>
+    </tr>
+</table>
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="border-right: 2px solid #000; border-left: 2px solid #000; padding: 6px; width: 100%;"><strong>Address:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_street ) ?></td>
+    </tr>
+</table>
+<table style="width: 100%; border-collapse: collapse; padding-bottom: 4mm;">
+    <tr>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>City:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_city ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>State:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_state ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>Zip:</strong>&nbsp;&nbsp;<?php echo esc_html( $patient_zip ) ?></td>
+    </tr>
+</table>
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="border-right: 2px solid #000; border-left: 2px solid #000; border-bottom: 2px solid #000; padding: 6px; width: 60%;"><strong>Billing:</strong>&nbsp;&nbsp;<?php echo esc_html( $billing ) ?></td>
+        <td style="border-right: 2px solid #000; border-left: 2px solid #000; border-bottom: 2px solid #000; padding: 6px; width: 40%;"><strong>Total # of scripts in this order:</strong>&nbsp;&nbsp;<?php echo esc_html( $scripts ) ?></td>
+    </tr>
+</table>
+&nbsp;
 
 <!-- Content -->
 <div class="text-center"><?php if ( $methylcobalamin ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10060;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of methylcobalamin is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
@@ -586,14 +422,18 @@ $html_config = [
     <?php if ( $b12_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $b12_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
-<div id="attestation-signature">Prescriber Attestation Signature:
-<?php if ( ! empty( $signature ) ) {
-    echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
-}
-?>
-</div>
-<div id="attestation-date">Date: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $date ) ?>&nbsp;&nbsp;</span></div>
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="border: 2px solid #fff; padding: 6px; width: 50%; vertical-align: bottom; text-align: right;"><strong>Prescriber Attestation Signature:</strong><span class="bottomline">&nbsp;&nbsp;<?php if ( ! empty( $signature ) ) {
+                    echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
+                }
+                ?>&nbsp;&nbsp;</span></td>
+        <td style="border: 2px solid #fff; padding: 6px; width: 50%; vertical-align: bottom;"><strong>Date:&nbsp;</strong><span class="underline">&nbsp;&nbsp;<?php echo esc_html( $date ) ?>&nbsp;&nbsp;</span></td>
+    </tr>
+</table>
+&nbsp;
 
+<!--  Prescription Table  -->
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
     <tr style="background-color: #f7f7f7;">
@@ -660,21 +500,30 @@ $html_config = [
     </tbody>
 </table>
 
-<!-- Footer Questions -->
-<htmlpagefooter name="Footer">
-	<div id="prescriber-name"><?php echo esc_html( $prescriber_name ) ?></div> &nbsp;
-	<div id="office-phone"><?php echo esc_html( $prescriber_phone ) ?></div> &nbsp;
-	<div id="fax"><?php echo esc_html( $prescriber_fax ) ?></div> &nbsp;
-	<div id="prescriber-address"><?php echo esc_html( $prescriber_street ) ?></div> &nbsp;
-	<div id="prescriber-city-state-zip"><?php echo esc_html( $prescriber_city_state_zip ); ?></div> &nbsp;
-	<div id="npi-dea"><?php echo esc_html( $npi_dea ) ?></div> &nbsp;
-	<div id="prescriber-date"><?php echo esc_html( $date ) ?></div> &nbsp;
-
-	<div id="prescriber-signature">
-		<?php if ( ! empty( $signature ) ) {
-			echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
-		}
-		?>
-		&nbsp;
-	</div>
-</htmlpagefooter>
+<!-- Footer Table -->
+&nbsp;
+<table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="border: 2px solid #000; padding: 6px; width: 50%; vertical-align: bottom;"><strong>Prescriber Name:</strong>&nbsp;&nbsp;<?php echo esc_html( $prescriber_name ) ?></td>
+            <td style="border: 2px solid #000; padding: 6px; width: 50%; vertical-align: bottom;"><strong>Prescriber Signature:</strong>&nbsp;&nbsp;<?php if ( ! empty( $signature ) ) {
+                    echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
+                }
+                ?></td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid #000; padding: 6px;"><strong>Prescriber Phone Number:</strong>&nbsp;&nbsp;<?php echo esc_html( $prescriber_phone ) ?></td>
+            <td style="border: 2px solid #000; padding: 6px;"><strong>NPI:</strong>&nbsp;&nbsp;<?php echo esc_html( $npi_dea ) ?></td>
+        </tr>
+</table>
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="border-right: 2px solid #000; border-left: 2px solid #000; padding: 6px; width: 100%;"><strong>Prescriber Address:</strong>&nbsp;&nbsp;<?php echo esc_html( $prescriber_street ) ?></td>
+    </tr>
+</table>
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>City:</strong>&nbsp;&nbsp;<?php echo esc_html( $prescriber_city ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>State:</strong>&nbsp;&nbsp;<?php echo esc_html( $prescriber_state ) ?></td>
+        <td style="border: 2px solid #000; padding: 6px;"><strong>Zip:</strong>&nbsp;&nbsp;<?php echo esc_html( $prescriber_zip ) ?></td>
+    </tr>
+</table>

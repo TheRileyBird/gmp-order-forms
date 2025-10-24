@@ -80,13 +80,27 @@ class Tirzepatide_Methylcobalamin extends Helper_Abstract_Config_Settings implem
 					'type'       => 'text',
 					'inputClass' => 'merge-tag-support mt-hide_all_fields',
 				],
-
-				'order_form_city_state_zip' => [
-					'id'         => 'order_form_city_state_zip',
-					'name'       => esc_html__( 'City, State and Zip', 'gravity-forms-pdf-extended' ),
-					'type'       => 'text',
-					'inputClass' => 'merge-tag-support mt-hide_all_fields',
-				],
+                
+                'order_form_city' => [
+                    'id'         => 'order_form_patient_city',
+                    'name'       => esc_html__( 'City', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_state' => [
+                    'id'         => 'order_form_patient_state',
+                    'name'       => esc_html__( 'State', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_zip' => [
+                    'id'         => 'order_form_patient_zip',
+                    'name'       => esc_html__( 'Zip', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
 
 				'order_form_allergies' => [
 					'id'         => 'order_form_allergies',
@@ -95,12 +109,19 @@ class Tirzepatide_Methylcobalamin extends Helper_Abstract_Config_Settings implem
 					'inputClass' => 'merge-tag-support mt-hide_all_fields',
 				],
 
-				'order_form_billing_options' => [
-					'id'         => 'order_form_billing_options',
-					'name'       => esc_html__( 'Billing Options', 'gravity-forms-pdf-extended' ),
-					'type'       => 'text',
-					'inputClass' => 'merge-tag-support mt-hide_all_fields',
-				],
+                'order_form_billing' => [
+                    'id'         => 'order_form_billing',
+                    'name'       => esc_html__( 'Billing Choice', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_scripts' => [
+                    'id'         => 'order_form_scripts',
+                    'name'       => esc_html__( 'Total # Of Scripts', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
                 
                 // Form Section
                 'order_form_prescription_section' => [
@@ -244,13 +265,27 @@ class Tirzepatide_Methylcobalamin extends Helper_Abstract_Config_Settings implem
 					'type'       => 'text',
 					'inputClass' => 'merge-tag-support mt-hide_all_fields',
 				],
-
-				'order_form_prescriber_city_state_zip' => [
-					'id'         => 'order_form_prescriber_city_state_zip',
-					'name'       => esc_html__( 'Prescriber City, State, and Zip', 'gravity-forms-pdf-extended' ),
-					'type'       => 'text',
-					'inputClass' => 'merge-tag-support mt-hide_all_fields',
-				],
+                
+                'order_form_prescriber_city' => [
+                    'id'         => 'order_form_prescriber_city',
+                    'name'       => esc_html__( 'City', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_prescriber_state' => [
+                    'id'         => 'order_form_prescriber_state',
+                    'name'       => esc_html__( 'State', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_prescriber_zip' => [
+                    'id'         => 'order_form_prescriber_zip',
+                    'name'       => esc_html__( 'Zip', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
 
 				'order_form_prescriber_npi_dea' => [
 					'id'         => 'order_form_prescriber_npi_dea',
