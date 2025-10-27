@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Dermatology
- * Version: 1.16
- * Description: Dermatology Order Form
+ * Template Name: Hair Restoration
+ * Version: 1.0.1
+ * Description: Hair Restoration Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -66,35 +66,18 @@ $signature                 = $gform->process_tags( $settings['order_form_prescri
 $billing_options           = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
 $billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
 
-$hydroquinone_12                    = $gform->process_tags( $settings['order_form_hydroquinone_12'] ?? '', $form, $entry );
-$hydroquinone_8                     = $gform->process_tags( $settings['order_form_hydroquinone_8'] ?? '', $form, $entry );
-$hydroquinone_8_tretinoin           = $gform->process_tags( $settings['order_form_hydroquinone_8_tretinoin'] ?? '', $form, $entry );
-$hydroquinone_7_tretinoin           = $gform->process_tags( $settings['order_form_hydroquinone_7_tretinoin'] ?? '', $form, $entry );
-$hydroquinone_4_tretinoin           = $gform->process_tags( $settings['order_form_hydroquinone_4_tretinoin'] ?? '', $form, $entry );
-$tretinoin_niacinamide_025          = $gform->process_tags( $settings['order_form_tretinoin_niacinamide_025'] ?? '', $form, $entry );
-$tretinoin_niacinamide_05           = $gform->process_tags( $settings['order_form_tretinoin_niacinamide_05'] ?? '', $form, $entry );
-$tretinoin_niacinamide_1            = $gform->process_tags( $settings['order_form_tretinoin_niacinamide_1'] ?? '', $form, $entry );
-$tretinoin_clindamycin              = $gform->process_tags( $settings['order_form_tretinoin_clindamycin'] ?? '', $form, $entry );
-$tretinoin                          = $gform->process_tags( $settings['order_form_tretinoin'] ?? '', $form, $entry );
-$tretinoin_percent                  = $gform->process_tags( $settings['order_form_tretinoin_percent'] ?? '', $form, $entry );
-$kojic                              = $gform->process_tags( $settings['order_form_kojic'] ?? '', $form, $entry );
-$kojic_percent                      = $gform->process_tags( $settings['order_form_kojic_percent'] ?? '', $form, $entry );
-$vitamin_e                      = $gform->process_tags( $settings['order_form_vitamin_e'] ?? '', $form, $entry );
-$vitamin_e_percent              = $gform->process_tags( $settings['order_form_vitamin_e_percent'] ?? '', $form, $entry );
-$hydroquinone                   = $gform->process_tags( $settings['order_form_hydroquinone'] ?? '', $form, $entry );
-$hydroquinone_percent           = $gform->process_tags( $settings['order_form_hydroquinone_percent'] ?? '', $form, $entry );
-$azelaic                        = $gform->process_tags( $settings['order_form_azelaic'] ?? '', $form, $entry );
-$azelaic_percent                = $gform->process_tags( $settings['order_form_azelaic_percent'] ?? '', $form, $entry );
-$lipoic                         = $gform->process_tags( $settings['order_form_lipoic'] ?? '', $form, $entry );
-$lipoic_percent                 = $gform->process_tags( $settings['order_form_lipoic_percent'] ?? '', $form, $entry );
-$fluocinolone                   = $gform->process_tags( $settings['order_form_fluocinolone'] ?? '', $form, $entry );
-$fluocinolone_percent           = $gform->process_tags( $settings['order_form_fluocinolone_percent'] ?? '', $form, $entry );
-$niacinamide                    = $gform->process_tags( $settings['order_form_niacinamide'] ?? '', $form, $entry );
-$niacinamide_percent            = $gform->process_tags( $settings['order_form_niacinamide_percent'] ?? '', $form, $entry );
-$ascorbic                       = $gform->process_tags( $settings['order_form_ascorbic'] ?? '', $form, $entry );
-$ascorbic_percent               = $gform->process_tags( $settings['order_form_ascorbic_percent'] ?? '', $form, $entry );
-$hydrocortisone                 = $gform->process_tags( $settings['order_form_hydrocortisone'] ?? '', $form, $entry );
-$hydrocortisone_percent         = $gform->process_tags( $settings['order_form_hydrocortisone_percent'] ?? '', $form, $entry );
+$biotin_10              = $gform->process_tags( $settings['order_form_biotin_10mg_ml_injectable_solution'] ?? '', $form, $entry );
+$minox5_az12            = $gform->process_tags( $settings['order_form_minoxidil_5_azelaic_acid_12_5_spray'] ?? '', $form, $entry );
+$met_5                  = $gform->process_tags( $settings['order_form_metformin_5_cream'] ?? '', $form, $entry );
+$minox5_az12_fin01      = $gform->process_tags( $settings['order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_spray'] ?? '', $form, $entry );
+$met_10                 = $gform->process_tags( $settings['order_form_metformin_10_cream'] ?? '', $form, $entry );
+$minox5_fin01           = $gform->process_tags( $settings['order_form_minoxidil_5_finasteride_0_1_spray'] ?? '', $form, $entry );
+$estr_01                = $gform->process_tags( $settings['order_form_estradiol_0_1_cream'] ?? '', $form, $entry );
+$minox5_fin01_tret0025  = $gform->process_tags( $settings['order_form_minoxidil_5_finasteride_0_1_tretinoin_0_025_spray'] ?? '', $form, $entry );
+$estr006_mel005_spiro01_fin05_minox2 = $gform->process_tags( $settings['order_form_estradiol_0_06_melatonin_0_05_spiro_0_1_fin_0_5_minox_2_spray'] ?? '', $form, $entry );
+$minox5_az12_fin01_keto2 = $gform->process_tags( $settings['order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_ketoconazole_2_spray'] ?? '', $form, $entry );
+$test05_spiro01_fin05_minox5 = $gform->process_tags( $settings['order_form_testosterone_0_5_spiro_0_1_fin_0_5_minox_5_spray'] ?? '', $form, $entry );
+$minox5_hc1             = $gform->process_tags( $settings['order_form_minoxidil_5_hydrocortisone_1_spray'] ?? '', $form, $entry );
 
 $directions                  = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
 $quantity                   = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
@@ -417,75 +400,38 @@ $html_config = [
             <td><strong>Face Creams</strong></td>
         </tr>
         <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_12 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 12% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_8 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 8%/Tretinoin 0.1%/Fluocinolone 0.01% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $biotin_10 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Biotin 10mg/ml Injectable Solution</td>
+            <td style="width: 50%;"><span class="box"><?= $minox5_az12 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Azelaic Acid 12.5% Spray</td>
         </tr>
+        <tr><td>&nbsp;</td></tr>
         <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_8_tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 8% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_7_tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 7%/Tretinoin 0.05%/
-                Fluocinolone 0.01% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $met_5 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Metformin 5% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $minox5_az12_fin01 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Azelaic Acid 12.5%/Finasteride 0.1% Spray</td>
         </tr>
+        <tr><td>&nbsp;</td></tr>
         <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_4_tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 4%/Tretinoin 0.025%/
-                Hydrocortisone 1%/Kojic Acid 4% Cream</td>
-            <td style="width: 50%;"></td>
+            <td style="width: 50%;"><span class="box"><?= $met_10 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Metformin 10% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $minox5_fin01 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Finasteride 0.1% Spray</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $estr_01 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol 0.1% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $minox5_fin01_tret0025 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Finasteride 0.1%/Tretinoin
+                0.025% Spray</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $estr006_mel005_spiro01_fin05_minox2 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol 0.06%/Melatonin 0.05%/Spirolactone 0.1%/ Finastride 0.5%/ Minoxidil 2% Spray</td>
+            <td style="width: 50%;"><span class="box"><?= $minox5_az12_fin01_keto2 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Azelaic Acid 12.5%/Finasteride 0.1%/Ketoconazole 2% Spray</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $test05_spiro01_fin05_minox5 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone 0.5%/Spirolactone 0.1%/ Finastride 0.5%/Minoxidil 5% Spray</td>
+            <td style="width: 50%;"><span class="box"><?= $minox5_hc1 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Hydrocortisone 1% Spray</td>
         </tr>
     </tbody>
 </table>
 &nbsp;
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
-    <tr style="width: 100%; text-align: left;">
-        <td><strong>Acne Creams</strong></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_niacinamide_025 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.025%/Niacinamide 5% Cream</td>
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_niacinamide_05 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.1%/Niacinamide 5% Cream</td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_niacinamide_1 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.05%/Niacinamide 5% Cream</td>
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_clindamycin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.025%/Clindamycin 1% Cream</td>
-    </tr>
-    </tbody>
-</table>
-&nbsp;
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
-    <tr style="width: 100%; text-align: left;">
-        <td><strong>Custom Fomulations</strong></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin
-            <span class="underline">&nbsp;&nbsp;<?= $tretinoin_percent ? esc_html( $tretinoin_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $kojic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Kojic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $kojic_percent ? esc_html( $kojic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"><span class="box"><?= $vitamin_e ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Vitamin E
-            <span class="underline">&nbsp;&nbsp;<?= $vitamin_e_percent ? esc_html( $vitamin_e_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $hydroquinone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone
-            <span class="underline">&nbsp;&nbsp;<?= $hydroquinone_percent ? esc_html( $hydroquinone_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $azelaic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Azelaic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $azelaic_percent ? esc_html( $azelaic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"><span class="box"><?= $lipoic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lipoic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $lipoic_percent ? esc_html( $lipoic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $fluocinolone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Fluocinolone
-            <span class="underline">&nbsp;&nbsp;<?= $fluocinolone_percent ? esc_html( $fluocinolone_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $niacinamide ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Niacinamide
-            <span class="underline">&nbsp;&nbsp;<?= $niacinamide_percent ? esc_html( $niacinamide_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $ascorbic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Ascorbic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $ascorbic_percent ? esc_html( $ascorbic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $hydrocortisone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydrocortisone
-            <span class="underline">&nbsp;&nbsp;<?= $hydrocortisone_percent ? esc_html( $hydrocortisone_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"></td>
-    </tr>
-    </tbody>
-</table>
 &nbsp;
 <table style="width: 100%; border-collapse: collapse;">
     <tbody>

@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Semaglutide_L_Carnitine
+ * Class Dermatology
  *
  * @package  GFPDF\Templates\Config
  *
  * @Internal See https://docs.gravitypdf.com/v6/install-template-via-template-manager for more information about this class
  */
-class Semaglutide_L_Carnitine extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
+class Dermatology extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
 
 	/**
 	 * Return the templates configuration structure which control what extra fields will be shown in the "Template" tab when configuring a form's PDF.
@@ -123,6 +123,7 @@ class Semaglutide_L_Carnitine extends Helper_Abstract_Config_Settings implements
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
+                
                 // Form Section
                 'order_form_prescription_section' => [
                     'id'    => 'order_form_prescription_section',
@@ -131,104 +132,218 @@ class Semaglutide_L_Carnitine extends Helper_Abstract_Config_Settings implements
                     'class' => 'gfpdf-no-padding',
                 ],
                 
-                'order_form_lcarnitine' => [
-                    'id'         => 'order_form_lcarnitine',
-                    'name'       => esc_html__( 'L-Carnitine', 'gravity-forms-pdf-extended' ),
+                'order_form_hydroquinone_12' => [
+                    'id'         => 'order_form_hydroquinone_12',
+                    'name'       => esc_html__( 'Hydroquinone 12', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_lcarnitine_options' => [
-                    'id'         => 'order_form_lcarnitine_options',
-                    'name'       => esc_html__( 'L-Carnitine Options', 'gravity-forms-pdf-extended' ),
+                'order_form_hydroquinone_8' => [
+                    'id'         => 'order_form_hydroquinone_8',
+                    'name'       => esc_html__( 'Hydroquinone 8', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_lcarnitine_other' => [
-                    'id'         => 'order_form_lcarnitine_other',
-                    'name'       => esc_html__( 'L-Carnitine Other', 'gravity-forms-pdf-extended' ),
+                'order_form_hydroquinone_8_tretinoin' => [
+                    'id'         => 'order_form_hydroquinone_8_tretinoin',
+                    'name'       => esc_html__( 'Hydroquinone 8 & Tretinoin', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_1' => [
-                    'id'         => 'order_form_month_1',
-                    'name'       => esc_html__( 'Month 1', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_1' => [
-                    'id'         => 'order_form_refill_1',
-                    'name'       => esc_html__( 'Refill 1', 'gravity-forms-pdf-extended' ),
+                'order_form_hydroquinone_7_tretinoin' => [
+                    'id'         => 'order_form_hydroquinone_7_tretinoin',
+                    'name'       => esc_html__( 'Hydroquinone 7 & Tretinoin', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_2' => [
-                    'id'         => 'order_form_month_2',
-                    'name'       => esc_html__( 'Month 2', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_2' => [
-                    'id'         => 'order_form_refill_2',
-                    'name'       => esc_html__( 'Refill 2', 'gravity-forms-pdf-extended' ),
+                'order_form_hydroquinone_4_tretinoin' => [
+                    'id'         => 'order_form_hydroquinone_4_tretinoin',
+                    'name'       => esc_html__( 'Hydroquinone 4 & Tretinoin', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_3' => [
-                    'id'         => 'order_form_month_3',
-                    'name'       => esc_html__( 'Month 3', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_3' => [
-                    'id'         => 'order_form_refill_3',
-                    'name'       => esc_html__( 'Refill 3', 'gravity-forms-pdf-extended' ),
+                'order_form_tretinoin_niacinamide_025' => [
+                    'id'         => 'order_form_tretinoin_niacinamide_025',
+                    'name'       => esc_html__( 'Tretinoin & Niacinamide 025', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_4' => [
-                    'id'         => 'order_form_month_4',
-                    'name'       => esc_html__( 'Month 4', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_4' => [
-                    'id'         => 'order_form_refill_4',
-                    'name'       => esc_html__( 'Refill 4', 'gravity-forms-pdf-extended' ),
+                'order_form_tretinoin_niacinamide_05' => [
+                    'id'         => 'order_form_tretinoin_niacinamide_05',
+                    'name'       => esc_html__( 'Tretinoin & Niacinamide 05', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_5' => [
-                    'id'         => 'order_form_month_5',
-                    'name'       => esc_html__( 'Month 5', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_5' => [
-                    'id'         => 'order_form_refill_5',
-                    'name'       => esc_html__( 'Refill 5', 'gravity-forms-pdf-extended' ),
+                'order_form_tretinoin_niacinamide_1' => [
+                    'id'         => 'order_form_tretinoin_niacinamide_1',
+                    'name'       => esc_html__( 'Tretinoin & Niacinamide 1', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_6' => [
-                    'id'         => 'order_form_month_6',
-                    'name'       => esc_html__( 'Month 6', 'gravity-forms-pdf-extended' ),
+                'order_form_tretinoin_clindamycin' => [
+                    'id'         => 'order_form_tretinoin_clindamycin',
+                    'name'       => esc_html__( 'Tretinoin & Clindamycin', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
-                'order_form_refill_6' => [
-                    'id'         => 'order_form_refill_6',
-                    'name'       => esc_html__( 'Refill 6', 'gravity-forms-pdf-extended' ),
+                
+                'order_form_tretinoin' => [
+                    'id'         => 'order_form_tretinoin',
+                    'name'       => esc_html__( 'Tretinoin', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
+                'order_form_tretinoin_percent' => [
+                    'id'         => 'order_form_tretinoin_percent',
+                    'name'       => esc_html__( 'Tretinoin %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_kojic' => [
+                    'id'         => 'order_form_kojic',
+                    'name'       => esc_html__( 'Kojic', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_kojic_percent' => [
+                    'id'         => 'order_form_kojic_percent',
+                    'name'       => esc_html__( 'Kojic %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_vitamin_e' => [
+                    'id'         => 'order_form_vitamin_e',
+                    'name'       => esc_html__( 'Vitamin E', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_vitamin_e_percent' => [
+                    'id'         => 'order_form_vitamin_e_percent',
+                    'name'       => esc_html__( 'Vitamin E %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_hydroquinone' => [
+                    'id'         => 'order_form_hydroquinone',
+                    'name'       => esc_html__( 'Hydroquinone', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_hydroquinone_percent' => [
+                    'id'         => 'order_form_hydroquinone_percent',
+                    'name'       => esc_html__( 'Hydroquinone %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_azelaic' => [
+                    'id'         => 'order_form_azelaic',
+                    'name'       => esc_html__( 'Azelaic', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_azelaic_percent' => [
+                    'id'         => 'order_form_azelaic_percent',
+                    'name'       => esc_html__( 'Azelaic %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_lipoic' => [
+                    'id'         => 'order_form_lipoic',
+                    'name'       => esc_html__( 'Lipoic', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_lipoic_percent' => [
+                    'id'         => 'order_form_lipoic_percent',
+                    'name'       => esc_html__( 'Lipoic %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_fluocinolone' => [
+                    'id'         => 'order_form_fluocinolone',
+                    'name'       => esc_html__( 'Fluocinolone', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_fluocinolone_percent' => [
+                    'id'         => 'order_form_fluocinolone_percent',
+                    'name'       => esc_html__( 'Fluocinolone %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_niacinamide' => [
+                    'id'         => 'order_form_niacinamide',
+                    'name'       => esc_html__( 'Niacinamide', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_niacinamide_percent' => [
+                    'id'         => 'order_form_niacinamide_percent',
+                    'name'       => esc_html__( 'Niacinamide %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_ascorbic' => [
+                    'id'         => 'order_form_ascorbic',
+                    'name'       => esc_html__( 'Ascorbic', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_ascorbic_percent' => [
+                    'id'         => 'order_form_ascorbic_percent',
+                    'name'       => esc_html__( 'Ascorbic %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_hydrocortisone' => [
+                    'id'         => 'order_form_hydrocortisone',
+                    'name'       => esc_html__( 'Hydrocortisone', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_hydrocortisone_percent' => [
+                    'id'         => 'order_form_hydrocortisone_percent',
+                    'name'       => esc_html__( 'Hydrocortisone %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_directions' => [
+                    'id'         => 'order_form_directions',
+                    'name'       => esc_html__( 'Directions', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_quantity' => [
+                    'id'         => 'order_form_quantity',
+                    'name'       => esc_html__( 'Quantity', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_refill' => [
+                    'id'         => 'order_form_refill',
+                    'name'       => esc_html__( 'Refill', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
                 
                 // Prescriber Section
 				'order_form_prescriber_section' => [
