@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Tirzepatide-Methylcobalamin
- * Version: 1.85
- * Description: A Tirzepatide-Methylcobalamin template that includes a fixed header/footer with patient and providing information
+ * Template Name: Gastro
+ * Version: 1.44
+ * Description: Gastro Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -63,31 +63,28 @@ $npi_dea                   = $gform->process_tags( $settings['order_form_prescri
 $date                      = $gform->process_tags( $settings['order_form_prescriber_date'] ?? '', $form, $entry );
 $signature                 = $gform->process_tags( $settings['order_form_prescriber_signature'] ?? '', $form, $entry );
 
-$billing_options = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
-$billing_options = array_map( 'trim', explode( ',', $billing_options ) );
+$billing_options           = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
+$billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
 
-$methylcobalamin = $gform->process_tags( $settings['order_form_methylcobalamin'] ?? '', $form, $entry );
-$b12_options = $gform->process_tags( $settings['order_form_b12_options'] ?? '', $form, $entry );
-$b12_options = array_map( 'trim', explode( ',', $b12_options ) );
-$b12_other = $gform->process_tags( $settings['order_form_b12_other'] ?? '', $form, $entry );
+$hemorrhoidal_ointment_quantity     = $gform->process_tags( $settings['order_form_hemorrhoidal_ointment_quantity'] ?? '', $form, $entry );
+$hemorrhoidal_ointment_refill       = $gform->process_tags( $settings['order_form_hemorrhoidal_ointment_refill'] ?? '', $form, $entry );
+$hemorrhoidal_ointment_sig          = $gform->process_tags( $settings['order_form_hemorrhoidal_ointment_sig'] ?? '', $form, $entry );
 
-$month_1 = $gform->process_tags( $settings['order_form_month_1'] ?? '', $form, $entry );
-$refill_1 = $gform->process_tags( $settings['order_form_refill_1'] ?? '', $form, $entry );
+$catinis_mouthwash_quantity         = $gform->process_tags( $settings['order_form_catinis_mouthwash_quantity'] ?? '', $form, $entry );
+$catinis_mouthwash_refill           = $gform->process_tags( $settings['order_form_catinis_mouthwash_refill'] ?? '', $form, $entry );
+$catinis_mouthwash_sig              = $gform->process_tags( $settings['order_form_catinis_mouthwash_sig'] ?? '', $form, $entry );
 
-$month_2 = $gform->process_tags( $settings['order_form_month_2'] ?? '', $form, $entry );
-$refill_2 = $gform->process_tags( $settings['order_form_refill_2'] ?? '', $form, $entry );
+$rectal_salve_quantity              = $gform->process_tags( $settings['order_form_rectal_salve_quantity'] ?? '', $form, $entry );
+$rectal_salve_refill                = $gform->process_tags( $settings['order_form_rectal_salve_refill'] ?? '', $form, $entry );
+$rectal_salve_sig                   = $gform->process_tags( $settings['order_form_rectal_salve_sig'] ?? '', $form, $entry );
 
-$month_3 = $gform->process_tags( $settings['order_form_month_3'] ?? '', $form, $entry );
-$refill_3 = $gform->process_tags( $settings['order_form_refill_3'] ?? '', $form, $entry );
+$gi_cocktail_quantity               = $gform->process_tags( $settings['order_form_gi_cocktail_quantity'] ?? '', $form, $entry );
+$gi_cocktail_refill                 = $gform->process_tags( $settings['order_form_gi_cocktail_refill'] ?? '', $form, $entry );
+$gi_cocktail_sig                    = $gform->process_tags( $settings['order_form_gi_cocktail_sig'] ?? '', $form, $entry );
 
-$month_4 = $gform->process_tags( $settings['order_form_month_4'] ?? '', $form, $entry );
-$refill_4 = $gform->process_tags( $settings['order_form_refill_4'] ?? '', $form, $entry );
-
-$month_5 = $gform->process_tags( $settings['order_form_month_5'] ?? '', $form, $entry );
-$refill_5 = $gform->process_tags( $settings['order_form_refill_5'] ?? '', $form, $entry );
-
-$month_6 = $gform->process_tags( $settings['order_form_month_6'] ?? '', $form, $entry );
-$refill_6 = $gform->process_tags( $settings['order_form_refill_6'] ?? '', $form, $entry );
+$rectal_rocket_quantity             = $gform->process_tags( $settings['order_form_rectal_rocket_quantity'] ?? '', $form, $entry );
+$rectal_rocket_refill               = $gform->process_tags( $settings['order_form_rectal_rocket_refill'] ?? '', $form, $entry );
+$rectal_rocket_sig                  = $gform->process_tags( $settings['order_form_rectal_rocket_sig'] ?? '', $form, $entry );
 
 /*
  * Load our core-specific styles from our PDF settings which will be passed to the PDF template $config array
@@ -323,7 +320,7 @@ $html_config = [
 
     /* Table Classes */
     /*td, th {*/
-    /*  vertical-align: middle; !* Centers vertically *!*/
+    /*    height: 40px;*/
     /*}*/
 
     /* Utility Classes */
@@ -353,16 +350,16 @@ $html_config = [
     .box {
         display: inline-block;
         width: 6mm;
-        height: 6mm;
+        height: 45m;
         border: 1px solid #000;
         text-align: center;
-        line-height: 6mm;
+        line-height: 45m;
         font-size: 10pt;
     }
 </style>
 
 <!-- Form Title -->
-<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : ''; ?></div>
+<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : ''; ?>
 
 <!-- Patient Information Table -->
 <table style="width: 100%; border-collapse: collapse;">
@@ -398,109 +395,110 @@ $html_config = [
     </tr>
 </table>
 &nbsp;
-
 <!-- Content -->
-<div class="text-center"><?php if ( $methylcobalamin ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10060;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of methylcobalamin is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
-
-<div id="b12_options" class="text-center"><span class="underline">B12 Indications:</span> &nbsp;
-    <?php
-        $b12_choices = [
-                'b12-deficiency'    => 'B12 deficiency',
-                'b12-fatigue'       => 'Fatigue',
-                'b12-nausea'        => 'Nausea',
-                'b12-other'         => 'Other',
-        ];
-
-        foreach ( $b12_choices as $id => $label ) {
-            if ( in_array( $label, $b12_options, true ) ) {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&#10004;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '&nbsp;</span> &nbsp;&nbsp;';
-            } else {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&nbsp;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
-            }
-        }
-    ?>
-    <?php if ( $b12_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $b12_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
-</div>
-
 <table style="width: 100%; border-collapse: collapse;">
-    <tr>
-        <td style="border: 2px solid #fff; padding: 6px; width: 50%; vertical-align: bottom; text-align: right;"><strong>Prescriber Attestation Signature:</strong><span class="bottomline">&nbsp;&nbsp;<?php if ( ! empty( $signature ) ) {
-                    echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
-                }
-                ?>&nbsp;&nbsp;</span></td>
-        <td style="border: 2px solid #fff; padding: 6px; width: 50%; vertical-align: bottom;"><strong>Date:&nbsp;</strong><span class="underline">&nbsp;&nbsp;<?php echo esc_html( $date ) ?>&nbsp;&nbsp;</span></td>
-    </tr>
-</table>
-&nbsp;
-
-<!--  Prescription Table  -->
-<table style="width: 100%; border-collapse: collapse;">
-    <thead>
-    <tr style="background-color: #f7f7f7;">
-        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;">Check below to prescribe</th>
-        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;"># of Refills</th>
-        <th style="border: 2px solid #000; padding: 8px; text-align: left; text-align: center;">Combination Dosage</th>
-    </tr>
-    </thead>
     <tbody>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_1 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Month 1</span><br>
-            Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
-            <em>Inject 12 units (2mg) subcutaneously every week.</em>
+        <td style="width: 45%; height: 30px;">&nbsp;</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%;">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="width: 45%; font-weight: bold;">Hemorrhoidal Ointment</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%; font-weight: bold;">Catinis Mouthwash</td>
+    </tr>
+    <tr>
+        <td style="width: 45%;"><em>Diltiazem 2%/Lidocaine 1% ointment<br>*30g pump dispensed as 30 day supply</em></td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;"><em>Dexamethasone 5mg/5ml (120ml)/Nystatin 100,000 u/ml (120ml)/Diphenhydramine 12.5g/5ml (120ml)/Maalox (60ml)/Tetracycline 4500mg liquid</em></td>
+    </tr>
+    <tr>
+        <td style="width: 45%; height: 30px;">
+            Qty: <span class="underline">&nbsp;&nbsp; 30g &nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            Refill: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $hemorrhoidal_ointment_refill ) ?>&nbsp;&nbsp;</span>
+        </td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%; height: 30px;">
+            Qty: <span class="underline">&nbsp;&nbsp;<?= $catinis_mouthwash_quantity ? esc_html($catinis_mouthwash_quantity) . 'ml' : '' ?>&nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            Refill: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $catinis_mouthwash_refill ) ?>&nbsp;&nbsp;</span>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_2 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Month 2</span><br>
-            Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
-            <em>Inject 24 units (4mg) subcutaneously every week.</em>
+        <td style="width: 45%;">Sig: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $hemorrhoidal_ointment_sig ) ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;">Sig: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $catinis_mouthwash_sig ) ?>&nbsp;&nbsp;</span></td>
+    </tr>
+    <tr>
+        <td style="width: 45%; height: 45px;">&nbsp;</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%;">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="width: 45%; font-weight: bold;">Rectal Salve</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%; font-weight: bold;">GI Cocktail</td>
+    </tr>
+    <tr>
+        <td style="width: 45%;"><em>Chloral Hydrate 0.3%/Dibucaine 0.01%<br>*30g jar dispensed as 30 day supply</em></td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;"><em>Mylanta 30ml/ Hyoscyamine 0.125mg/5ml (10ml)/viscous lidocaine 2% (5ml)</em></td>
+    </tr>
+    <tr>
+        <td style="width: 45%; height: 30px;">
+            Qty: <span class="underline">&nbsp;&nbsp; 30g &nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            Refill: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $rectal_salve_refill ) ?>&nbsp;&nbsp;</span>
+        </td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%; height: 30px;">
+            Qty: <span class="underline">&nbsp;&nbsp;<?= $gi_cocktail_quantity ? esc_html($gi_cocktail_quantity) . 'ml' : '' ?>&nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            Refill: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $gi_cocktail_refill ) ?>&nbsp;&nbsp;</span>
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_3 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Month 3</span><br>
-            Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
-            <em>Inject 36 units (6mg) subcutaneously every week.</em>
-        </td>
+        <td style="width: 45%;">Sig: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $rectal_salve_sig ) ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;">Sig: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $gi_cocktail_sig ) ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_4 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Month 4</span><br>
-            Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
-            <em>Inject 51 units (8.5mg) subcutaneously every week.</em>
-        </td>
+        <td style="width: 45%; height: 45px;">&nbsp;</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%;">&nbsp;</td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_5 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Month 5</span><br>
-            Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
-            <em>Inject 67 units (11.22mg) subcutaneously every week.</em>
-        </td>
+        <td style="width: 45%; font-weight: bold;">Rectal Rocket</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%; font-weight: bold;"></td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_6 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_6 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Month 6</span><br>
-            Tirzepatide–Methylcobalamin 16.75mg–1mg/ml<br>
-            <em>Inject 100 units (16.7mg) subcutaneously every week.</em>
+        <td style="width: 45%;"><em>Hydrocortisone 1% / Lidocaine 2%</em></td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;"></td>
+    </tr>
+    <tr>
+        <td style="width: 45%; height: 30px;">
+            Qty: <span class="underline">&nbsp;&nbsp;<?= $rectal_rocket_quantity ? esc_html($rectal_rocket_quantity) . 'each' : '' ?>&nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            Refill: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $rectal_rocket_refill ) ?>&nbsp;&nbsp;</span>
         </td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;"></td>
+    </tr>
+    <tr>
+        <td style="width: 45%;">Sig: <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $rectal_rocket_sig ) ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 10%;"></td>
+        <td style="width: 45%;"></td>
+    </tr>
+    <tr>
+        <td style="width: 45%; height: 45px;">&nbsp;</td>
+        <td style="width: 10%;">&nbsp;</td>
+        <td style="width: 45%;">&nbsp;</td>
     </tr>
     </tbody>
 </table>
 
 <!-- Footer Table -->
+&nbsp;
+&nbsp;
 &nbsp;
 <table style="width: 100%; border-collapse: collapse;">
         <tr>

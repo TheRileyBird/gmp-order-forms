@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Semaglutide_L_Carnitine
+ * Class Gastro
  *
  * @package  GFPDF\Templates\Config
  *
  * @Internal See https://docs.gravitypdf.com/v6/install-template-via-template-manager for more information about this class
  */
-class Semaglutide_L_Carnitine extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
+class Gastro extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
 
 	/**
 	 * Return the templates configuration structure which control what extra fields will be shown in the "Template" tab when configuring a form's PDF.
@@ -131,101 +131,97 @@ class Semaglutide_L_Carnitine extends Helper_Abstract_Config_Settings implements
                     'class' => 'gfpdf-no-padding',
                 ],
                 
-                'order_form_lcarnitine' => [
-                    'id'         => 'order_form_lcarnitine',
-                    'name'       => esc_html__( 'L-Carnitine', 'gravity-forms-pdf-extended' ),
+                'order_form_hemorrhoidal_ointment_quantity' => [
+                    'id'         => 'order_form_hemorrhoidal_ointment_quantity',
+                    'name'       => esc_html__( 'Hemorrhoidal Ointment Quantity', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_hemorrhoidal_ointment_refill' => [
+                    'id'         => 'order_form_hemorrhoidal_ointment_refill',
+                    'name'       => esc_html__( 'Hemorrhoidal Ointment Refill', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_hemorrhoidal_ointment_sig' => [
+                    'id'         => 'order_form_hemorrhoidal_ointment_sig',
+                    'name'       => esc_html__( 'Hemorrhoidal Ointment Sig', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_lcarnitine_options' => [
-                    'id'         => 'order_form_lcarnitine_options',
-                    'name'       => esc_html__( 'L-Carnitine Options', 'gravity-forms-pdf-extended' ),
+                'order_form_catinis_mouthwash_quantity' => [
+                    'id'         => 'order_form_catinis_mouthwash_quantity',
+                    'name'       => esc_html__( 'Catinis Mouthwash Quantity', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_catinis_mouthwash_refill' => [
+                    'id'         => 'order_form_catinis_mouthwash_refill',
+                    'name'       => esc_html__( 'Catinis Mouthwash Refill', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_catinis_mouthwash_sig' => [
+                    'id'         => 'order_form_catinis_mouthwash_sig',
+                    'name'       => esc_html__( 'Catinis Mouthwash Sig', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_lcarnitine_other' => [
-                    'id'         => 'order_form_lcarnitine_other',
-                    'name'       => esc_html__( 'L-Carnitine Other', 'gravity-forms-pdf-extended' ),
+                'order_form_rectal_salve_quantity' => [
+                    'id'         => 'order_form_rectal_salve_quantity',
+                    'name'       => esc_html__( 'Rectal Salve Quantity', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_rectal_salve_refill' => [
+                    'id'         => 'order_form_rectal_salve_refill',
+                    'name'       => esc_html__( 'Rectal Salve Refill', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_rectal_salve_sig' => [
+                    'id'         => 'order_form_rectal_salve_sig',
+                    'name'       => esc_html__( 'Rectal Salve Sig', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_1' => [
-                    'id'         => 'order_form_month_1',
-                    'name'       => esc_html__( 'Month 1', 'gravity-forms-pdf-extended' ),
+                'order_form_gi_cocktail_quantity' => [
+                    'id'         => 'order_form_gi_cocktail_quantity',
+                    'name'       => esc_html__( 'GI Cocktail Quantity', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
-                'order_form_refill_1' => [
-                    'id'         => 'order_form_refill_1',
-                    'name'       => esc_html__( 'Refill 1', 'gravity-forms-pdf-extended' ),
+                'order_form_gi_cocktail_refill' => [
+                    'id'         => 'order_form_gi_cocktail_refill',
+                    'name'       => esc_html__( 'GI Cocktail Refill', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
-                
-                'order_form_month_2' => [
-                    'id'         => 'order_form_month_2',
-                    'name'       => esc_html__( 'Month 2', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_2' => [
-                    'id'         => 'order_form_refill_2',
-                    'name'       => esc_html__( 'Refill 2', 'gravity-forms-pdf-extended' ),
+                'order_form_gi_cocktail_sig' => [
+                    'id'         => 'order_form_gi_cocktail_sig',
+                    'name'       => esc_html__( 'GI Cocktail Sig', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_month_3' => [
-                    'id'         => 'order_form_month_3',
-                    'name'       => esc_html__( 'Month 3', 'gravity-forms-pdf-extended' ),
+                'order_form_rectal_rocket_quantity' => [
+                    'id'         => 'order_form_rectal_rocket_quantity',
+                    'name'       => esc_html__( 'Rectal Rocket Quantity', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
-                'order_form_refill_3' => [
-                    'id'         => 'order_form_refill_3',
-                    'name'       => esc_html__( 'Refill 3', 'gravity-forms-pdf-extended' ),
+                'order_form_rectal_rocket_refill' => [
+                    'id'         => 'order_form_rectal_rocket_refill',
+                    'name'       => esc_html__( 'Rectal Rocket Refill', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
-                
-                'order_form_month_4' => [
-                    'id'         => 'order_form_month_4',
-                    'name'       => esc_html__( 'Month 4', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_4' => [
-                    'id'         => 'order_form_refill_4',
-                    'name'       => esc_html__( 'Refill 4', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_month_5' => [
-                    'id'         => 'order_form_month_5',
-                    'name'       => esc_html__( 'Month 5', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_5' => [
-                    'id'         => 'order_form_refill_5',
-                    'name'       => esc_html__( 'Refill 5', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_month_6' => [
-                    'id'         => 'order_form_month_6',
-                    'name'       => esc_html__( 'Month 6', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_refill_6' => [
-                    'id'         => 'order_form_refill_6',
-                    'name'       => esc_html__( 'Refill 6', 'gravity-forms-pdf-extended' ),
+                'order_form_rectal_rocket_sig' => [
+                    'id'         => 'order_form_rectal_rocket_sig',
+                    'name'       => esc_html__( 'Rectal Rocket Sig', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
