@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Hair Restoration
+ * Class Men's Health
  *
  * @package  GFPDF\Templates\Config
  *
  * @Internal See https://docs.gravitypdf.com/v6/install-template-via-template-manager for more information about this class
  */
-class Hair_Restoration extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
+class Mens_Health extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
 
 	/**
 	 * Return the templates configuration structure which control what extra fields will be shown in the "Template" tab when configuring a form's PDF.
@@ -131,109 +131,55 @@ class Hair_Restoration extends Helper_Abstract_Config_Settings implements Helper
                     'class' => 'gfpdf-no-padding',
                 ],
                 
-                'order_form_biotin_10mg_ml_injectable_solution' => [
-                    'id'          => 'order_form_biotin_10mg_ml_injectable_solution',
-                    'name'        => esc_html__( 'Biotin 10mg/ml Injectable Solution', 'gravity-forms-pdf-extended' ),
-                    'type'        => 'text',
-                    'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                ],
-        
-                'order_form_minoxidil_5_azelaic_acid_12_5_spray' => [
-                            'id'          => 'order_form_minoxidil_5_azelaic_acid_12_5_spray',
-                            'name'        => esc_html__( 'Minoxidil 5%/Azelaic Acid 12.5% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_metformin_5_cream' => [
-                            'id'          => 'order_form_metformin_5_cream',
-                            'name'        => esc_html__( 'Metformin 5% Cream', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_spray' => [
-                            'id'          => 'order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_spray',
-                            'name'        => esc_html__( 'Minoxidil 5%/Azelaic Acid 12.5%/Finasteride 0.1% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_metformin_10_cream' => [
-                            'id'          => 'order_form_metformin_10_cream',
-                            'name'        => esc_html__( 'Metformin 10% Cream', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_minoxidil_5_finasteride_0_1_spray' => [
-                            'id'          => 'order_form_minoxidil_5_finasteride_0_1_spray',
-                            'name'        => esc_html__( 'Minoxidil 5%/Finasteride 0.1% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_estradiol_0_1_cream' => [
-                            'id'          => 'order_form_estradiol_0_1_cream',
-                            'name'        => esc_html__( 'Estradiol 0.1% Cream', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_minoxidil_5_finasteride_0_1_tretinoin_0_025_spray' => [
-                            'id'          => 'order_form_minoxidil_5_finasteride_0_1_tretinoin_0_025_spray',
-                            'name'        => esc_html__( 'Minoxidil 5%/Finasteride 0.1%/Tretinoin 0.025% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_estradiol_0_06_melatonin_0_05_spiro_0_1_fin_0_5_minox_2_spray' => [
-                            'id'          => 'order_form_estradiol_0_06_melatonin_0_05_spiro_0_1_fin_0_5_minox_2_spray',
-                            'name'        => esc_html__( 'Estradiol 0.06%/Melatonin 0.05%/Spirolactone 0.1%/Finastride 0.5%/Minoxidil 2% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_ketoconazole_2_spray' => [
-                            'id'          => 'order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_ketoconazole_2_spray',
-                            'name'        => esc_html__( 'Minoxidil 5%/Azelaic Acid 12.5%/Finasteride 0.1%/Ketoconazole 2% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_testosterone_0_5_spiro_0_1_fin_0_5_minox_5_spray' => [
-                            'id'          => 'order_form_testosterone_0_5_spiro_0_1_fin_0_5_minox_5_spray',
-                            'name'        => esc_html__( 'Testosterone 0.5%/Spirolactone 0.1%/Finastride 0.5%/Minoxidil 5% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                'order_form_minoxidil_5_hydrocortisone_1_spray' => [
-                            'id'          => 'order_form_minoxidil_5_hydrocortisone_1_spray',
-                            'name'        => esc_html__( 'Minoxidil 5%/Hydrocortisone 1% Spray', 'gravity-forms-pdf-extended' ),
-                            'type'        => 'text',
-                            'inputClass'  => 'merge-tag-support mt-hide_all_fields',
-                        ],
-                
-                
-                'order_form_directions' => [
-                    'id'         => 'order_form_directions',
-                    'name'       => esc_html__( 'Directions', 'gravity-forms-pdf-extended' ),
+                'order_form_alprostadil' => [
+                    'id'         => 'order_form_alprostadil',
+                    'name'       => esc_html__( 'Alprostadil (PGE1)', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
-                'order_form_quantity' => [
-                    'id'         => 'order_form_quantity',
-                    'name'       => esc_html__( 'Quantity', 'gravity-forms-pdf-extended' ),
+                
+                'order_form_papaverine' => [
+                    'id'         => 'order_form_papaverine',
+                    'name'       => esc_html__( 'Papaverine', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
+                
+                'order_form_phentolamine' => [
+                    'id'         => 'order_form_phentolamine',
+                    'name'       => esc_html__( 'Phentolamine', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_atropine' => [
+                    'id'         => 'order_form_atropine',
+                    'name'       => esc_html__( 'Atropine', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_qty' => [
+                    'id'         => 'order_form_qty',
+                    'name'       => esc_html__( 'Qty:', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_sig' => [
+                    'id'         => 'order_form_sig',
+                    'name'       => esc_html__( 'SIG:', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
                 'order_form_refill' => [
                     'id'         => 'order_form_refill',
-                    'name'       => esc_html__( 'Refill', 'gravity-forms-pdf-extended' ),
+                    'name'       => esc_html__( 'Refill:', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
+                
                 
                 
                 // Prescriber Section

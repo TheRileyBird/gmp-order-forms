@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Hair Restoration
+ * Template Name: Men's Health
  * Version: 1.0.1
- * Description: Hair Restoration Order Form
+ * Description: Men's Health Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -66,22 +66,15 @@ $signature                 = $gform->process_tags( $settings['order_form_prescri
 $billing_options           = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
 $billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
 
-$biotin_10              = $gform->process_tags( $settings['order_form_biotin_10mg_ml_injectable_solution'] ?? '', $form, $entry );
-$minox5_az12            = $gform->process_tags( $settings['order_form_minoxidil_5_azelaic_acid_12_5_spray'] ?? '', $form, $entry );
-$met_5                  = $gform->process_tags( $settings['order_form_metformin_5_cream'] ?? '', $form, $entry );
-$minox5_az12_fin01      = $gform->process_tags( $settings['order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_spray'] ?? '', $form, $entry );
-$met_10                 = $gform->process_tags( $settings['order_form_metformin_10_cream'] ?? '', $form, $entry );
-$minox5_fin01           = $gform->process_tags( $settings['order_form_minoxidil_5_finasteride_0_1_spray'] ?? '', $form, $entry );
-$estr_01                = $gform->process_tags( $settings['order_form_estradiol_0_1_cream'] ?? '', $form, $entry );
-$minox5_fin01_tret0025  = $gform->process_tags( $settings['order_form_minoxidil_5_finasteride_0_1_tretinoin_0_025_spray'] ?? '', $form, $entry );
-$estr006_mel005_spiro01_fin05_minox2 = $gform->process_tags( $settings['order_form_estradiol_0_06_melatonin_0_05_spiro_0_1_fin_0_5_minox_2_spray'] ?? '', $form, $entry );
-$minox5_az12_fin01_keto2 = $gform->process_tags( $settings['order_form_minoxidil_5_azelaic_acid_12_5_finasteride_0_1_ketoconazole_2_spray'] ?? '', $form, $entry );
-$test05_spiro01_fin05_minox5 = $gform->process_tags( $settings['order_form_testosterone_0_5_spiro_0_1_fin_0_5_minox_5_spray'] ?? '', $form, $entry );
-$minox5_hc1             = $gform->process_tags( $settings['order_form_minoxidil_5_hydrocortisone_1_spray'] ?? '', $form, $entry );
+$alprostadil        = $gform->process_tags( $settings['order_form_alprostadil'] ?? '', $form, $entry );
+$papaverine         = $gform->process_tags( $settings['order_form_papaverine'] ?? '', $form, $entry );
+$phentolamine       = $gform->process_tags( $settings['order_form_phentolamine'] ?? '', $form, $entry );
+$atropine           = $gform->process_tags( $settings['order_form_atropine'] ?? '', $form, $entry );
 
-$directions                  = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
-$quantity                   = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
-$refill                     = $gform->process_tags( $settings['order_form_refill'] ?? '', $form, $entry );
+$quantity           = $gform->process_tags( $settings['order_form_qty'] ?? '', $form, $entry );
+$sig                = $gform->process_tags( $settings['order_form_sig'] ?? '', $form, $entry );
+$refill             = $gform->process_tags( $settings['order_form_refill'] ?? '', $form, $entry );
+
 
 /*
  * Load our core-specific styles from our PDF settings which will be passed to the PDF template $config array
@@ -396,54 +389,19 @@ $html_config = [
 <!--  Prescription Table  -->
 <table style="width: 100%; border-collapse: collapse;">
     <tbody>
-        <tr style="width: 100%; text-align: left;">
-            <td><strong>Face Creams</strong></td>
-        </tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $biotin_10 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Biotin 10mg/ml Injectable Solution</td>
-            <td style="width: 50%;"><span class="box"><?= $minox5_az12 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Azelaic Acid 12.5% Spray</td>
-        </tr>
+        <tr><td style="font-size: 20px;">Bi-Mix: Papaverine + Phentolamine</td></tr>
+        <tr><td style="font-size: 20px;">Tri-Mix: PGE1 + Papaverine + Phentolamine</td></tr>
+        <tr><td style="font-size: 20px;">Quad-Mix: PGE1 + Papaverine + Phentolamine + Atropine</td></tr>
         <tr><td>&nbsp;</td></tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $met_5 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Metformin 5% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $minox5_az12_fin01 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Azelaic Acid 12.5%/Finasteride 0.1% Spray</td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $met_10 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Metformin 10% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $minox5_fin01 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Finasteride 0.1% Spray</td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $estr_01 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol 0.1% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $minox5_fin01_tret0025 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Finasteride 0.1%/Tretinoin
-                0.025% Spray</td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $estr006_mel005_spiro01_fin05_minox2 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol 0.06%/Melatonin 0.05%/Spirolactone 0.1%/ Finastride 0.5%/ Minoxidil 2% Spray</td>
-            <td style="width: 50%;"><span class="box"><?= $minox5_az12_fin01_keto2 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Azelaic Acid 12.5%/Finasteride 0.1%/Ketoconazole 2% Spray</td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $test05_spiro01_fin05_minox5 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone 0.5%/Spirolactone 0.1%/ Finastride 0.5%/Minoxidil 5% Spray</td>
-            <td style="width: 50%;"><span class="box"><?= $minox5_hc1 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Minoxidil 5%/Hydrocortisone 1% Spray</td>
-        </tr>
-    </tbody>
-</table>
-&nbsp;
-&nbsp;
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
-    <tr>
-        <td style="width: 100%; height: 30px;"><strong>Directions:</strong> <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $directions ) ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr>
-        <td style="width: 100%; height: 30px;">
-            <strong>Qty:</strong> <span class="underline">&nbsp;&nbsp; <?php echo esc_html( $quantity ) ?> &nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
-            <strong>Refills:</strong> <span class="underline">&nbsp;&nbsp; <?php echo esc_html( $refill ) ?> &nbsp;&nbsp;</span>
-        </td>
-    </tr>
+        <tr><td style="font-size: 20px; font-weight: bold;">Customizable Formulation</td></tr>
+        <tr><td style="font-weight: bold;">Choose which drugs you want to include in the formulation and write the dose in the blanks provided.</td></tr>
+        <tr style="height:50px;"><td>Alprostadil (PGE1) <span class="underline"><?= $alprostadil ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $alprostadil ) . 'MCG/ML &nbsp;&nbsp;&nbsp;&nbsp;'  : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
+        <tr style="height:50px;"><td>Papaverine <span class="underline"><?= $papaverine ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $papaverine ) . 'MG/ML &nbsp;&nbsp;&nbsp;&nbsp;'  : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
+        <tr style="height:50px;"><td>Phentolamine <span class="underline"><?= $phentolamine ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $phentolamine ) . 'MC/ML &nbsp;&nbsp;&nbsp;&nbsp;'  : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
+        <tr style="height:50px;"><td>Atropine <span class="underline"><?= $atropine ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $atropine ) . 'MC/ML &nbsp;&nbsp;&nbsp;&nbsp;'  : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
+        <tr style="height:50px;"><td>Quantity: <span class="underline"><?= $quantity ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $quantity ) . 'MLS &nbsp;&nbsp;&nbsp;&nbsp;'  : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
+        <tr style="height:50px;"><td>Sig: <span class="underline">Inject <?= $sig ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $sig ) . ' units intracavecrnosally as directed up to 4x weekly &nbsp;&nbsp;&nbsp;&nbsp;'  : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
+        <tr style="height:50px;"><td>Refill: <span class="underline"><?= $refill ? '&nbsp;&nbsp;&nbsp;&nbsp;' . esc_html( $refill ) . '&nbsp;&nbsp;&nbsp;&nbsp;' : '&nbsp;&nbsp;&nbsp;' ?></span></td></tr>
     </tbody>
 </table>
 
