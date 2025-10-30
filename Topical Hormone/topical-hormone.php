@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Topical Hormone
- * Version: 1.0
+ * Version: 1.3.3
  * Description: Topical Hormone Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -67,8 +67,13 @@ $billing_options           = $gform->process_tags( $settings['order_form_billing
 $billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
 
 $estriol = $gform->process_tags( $settings['order_form_estriol'] ?? '', $form, $entry );
+
+$biest_8020_prog = $gform->process_tags( $settings['order_form_biest_8020_prog'] ?? '', $form, $entry );
 $biest_8020_prog_testosterone = $gform->process_tags( $settings['order_form_biest_8020_prog_testosterone'] ?? '', $form, $entry );
+
+$biest_5050_prog = $gform->process_tags( $settings['order_form_biest_5050_prog'] ?? '', $form, $entry );
 $biest_5050_prog_testosterone = $gform->process_tags( $settings['order_form_biest_5050_prog_testosterone'] ?? '', $form, $entry );
+
 $progesterone = $gform->process_tags( $settings['order_form_progesterone'] ?? '', $form, $entry );
 $testosterone = $gform->process_tags( $settings['order_form_testosterone'] ?? '', $form, $entry );
 $scream_cream = $gform->process_tags( $settings['order_form_scream_cream'] ?? '', $form, $entry );
@@ -405,57 +410,64 @@ $html_config = [
     <tbody>
     <tr>
         <td style="width: 50%;"><strong>Topical Formulations</strong></td>
+        <td style="width: 10%;">&nbsp;</td>
         <td style="width: 50%;"><strong>Custom Formulations</strong></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;"><span class="box"><?= $estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
+        <td style="height:30px; width: 45%;"><span class="box"><?= $estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
             <span class="underline">&nbsp;&nbsp;<?= $estriol ? esc_html( $estriol ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-
-        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
-            <span class="underline">&nbsp;&nbsp;<?= $custom_estriol ? esc_html( $custom_estriol ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $custom_estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
+            <span class="underline">&nbsp;&nbsp;<?= $custom_estriol ? esc_html( $custom_estriol ) . '&nbsp;&nbsp;mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;"><span class="box"><?= $biest_8020_prog_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bi-Est 0.25mg (80/20)/Prog 25mg add Testosterone
-            <span class="underline">&nbsp;&nbsp;<?= $biest_8020_prog_testosterone ? esc_html( $biest_8020_prog_testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-
-        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_estradiol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol
-            <span class="underline">&nbsp;&nbsp;<?= $custom_estradiol ? esc_html( $custom_estradiol ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 45%;">
+            <span class="box"><?= $biest_8020_prog ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bi-Est 0.25mg (80/20)/Prog 25mg</span>
+            <br>
+            <span>Add Testosterone <span class="underline">&nbsp;&nbsp;<?= $biest_8020_prog_testosterone ? esc_html( $biest_8020_prog_testosterone ) : '&nbsp;' ?>&nbsp;&nbsp;</span>
+        </td>
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $custom_estradiol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol
+            <span class="underline">&nbsp;&nbsp;<?= $custom_estradiol ? esc_html( $custom_estradiol ) . '&nbsp;&nbsp;mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;"><span class="box"><?= $biest_5050_prog_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bi-Est 0.25mg (50/50)/Prog 25mg add Testosterone
-            <span class="underline">&nbsp;&nbsp;<?= $biest_5050_prog_testosterone ? esc_html( $biest_5050_prog_testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-
-        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_estrone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estrone
-            <span class="underline">&nbsp;&nbsp;<?= $custom_estrone ? esc_html( $custom_estrone ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 45%;">
+            <span class="box"><?= $biest_5050_prog ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bi-Est 0.25mg (50/50)/Prog 25mg</span>
+            <br>
+            <span>Add Testosterone <span class="underline">&nbsp;&nbsp;<?= $biest_5050_prog_testosterone ? esc_html( $biest_5050_prog_testosterone ) : '&nbsp;' ?>&nbsp;&nbsp;</span>
+        </td>
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $custom_estrone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estrone
+            <span class="underline">&nbsp;&nbsp;<?= $custom_estrone ? esc_html( $custom_estrone ) . '&nbsp;&nbsp;mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;"><span class="box"><?= $progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
-            <span class="underline">&nbsp;&nbsp;<?= $progesterone ? esc_html( $progesterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-
-        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_dhea ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; DHEA
-            <span class="underline">&nbsp;&nbsp;<?= $custom_dhea ? esc_html( $custom_dhea ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
+            <span class="underline">&nbsp;&nbsp;<?= $progesterone ? esc_html( $progesterone ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $custom_dhea ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; DHEA
+            <span class="underline">&nbsp;&nbsp;<?= $custom_dhea ? esc_html( $custom_dhea ) . '&nbsp;&nbsp;mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;"><span class="box"><?= $testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
-            <span class="underline">&nbsp;&nbsp;<?= $testosterone ? esc_html( $testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-
-        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
-            <span class="underline">&nbsp;&nbsp;<?= $custom_progesterone ? esc_html( $custom_progesterone ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
+            <span class="underline">&nbsp;&nbsp;<?= $testosterone ? esc_html( $testosterone ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $custom_progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
+            <span class="underline">&nbsp;&nbsp;<?= $custom_progesterone ? esc_html( $custom_progesterone ) . '&nbsp;&nbsp;mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;"><span class="box"><?= $scream_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Scream Cream (Theophylline 2.4%/Arginine 6%/Ergoloid 0.05%/Pentoxifylline 5%/Sildenafil 1%/Testosterone 0.1%)
-            <span class="underline">&nbsp;&nbsp;<?= $scream_cream ? esc_html( $scream_cream ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-
-        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
-            <span class="underline">&nbsp;&nbsp;<?= $custom_testosterone ? esc_html( $custom_testosterone ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $scream_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Scream Cream (Theophylline 2.4%/Arginine 6%/Ergoloid 0.05%/Pentoxifylline 5%/Sildenafil 1%/Testosterone 0.1%)</td>
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;"><span class="box"><?= $custom_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
+            <span class="underline">&nbsp;&nbsp;<?= $custom_testosterone ? esc_html( $custom_testosterone ) . '&nbsp;&nbsp;mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px; width: 50%;">
+        <td style="height:30px; width: 45%;">
             <span class="box"><?= $anhydrous ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Anhydrous Gel&nbsp;&nbsp;&nbsp;
             <span class="box"><?= $gel_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Cream&nbsp;&nbsp;&nbsp;
             <span class="box"><?= $solution ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Solution
         </td>
-        <td style="height:20px; width: 50%;">
+        <td style="height:30px; width: 10%;">&nbsp;</td>
+        <td style="height:30px; width: 45%;">
             <span class="box"><?= $custom_anhydrous ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Anhydrous Gel&nbsp;&nbsp;&nbsp;
             <span class="box"><?= $custom_gel_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Cream&nbsp;&nbsp;&nbsp;
             <span class="box"><?= $custom_solution ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Solution

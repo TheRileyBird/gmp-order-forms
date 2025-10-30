@@ -139,6 +139,12 @@ class Topical_Hormone extends Helper_Abstract_Config_Settings implements Helper_
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
+                'order_form_biest_8020_prog' => [
+                    'id' => 'order_form_biest_8020_prog',
+                    'name' => esc_html__( 'Bi-Est 0.25mg (80/20)/Prog 25mg', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
                 'order_form_biest_8020_prog_testosterone' => [
                     'id' => 'order_form_biest_8020_prog_testosterone',
                     'name' => esc_html__( 'Bi-Est 0.25mg (80/20)/Prog 25mg add Testosterone 0.5mg/g or 1mg/g', 'gravity-forms-pdf-extended' ),
@@ -146,6 +152,12 @@ class Topical_Hormone extends Helper_Abstract_Config_Settings implements Helper_
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
+                'order_form_biest_5050_prog' => [
+                    'id' => 'order_form_biest_5050_prog',
+                    'name' => esc_html__( 'Bi-Est 0.25mg (50/50)/Prog 25mg', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
                 'order_form_biest_5050_prog_testosterone' => [
                     'id' => 'order_form_biest_5050_prog_testosterone',
                     'name' => esc_html__( 'Bi-Est 0.25mg (50/50)/Prog 25mg add Testosterone 0.5mg/g or 1mg/g', 'gravity-forms-pdf-extended' ),
