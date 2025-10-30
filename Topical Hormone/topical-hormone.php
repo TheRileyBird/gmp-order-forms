@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Oral Hormone
- * Version: 1.2
- * Description: Oral Hormone Order Form
+ * Template Name: Topical Hormone
+ * Version: 1.0
+ * Description: Topical Hormone Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -66,22 +66,25 @@ $signature                 = $gform->process_tags( $settings['order_form_prescri
 $billing_options           = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
 $billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
 
-$progesterone_sr = $gform->process_tags( $settings['order_form_progesterone_sr'] ?? '', $form, $entry );
-$pregnenolone = $gform->process_tags( $settings['order_form_pregnenolone'] ?? '', $form, $entry );
-$dhea_sr = $gform->process_tags( $settings['order_form_dhea_sr'] ?? '', $form, $entry );
-
-$progesterone = $gform->process_tags( $settings['order_form_progesterone'] ?? '', $form, $entry );
 $estriol = $gform->process_tags( $settings['order_form_estriol'] ?? '', $form, $entry );
-$estradiol = $gform->process_tags( $settings['order_form_estradiol'] ?? '', $form, $entry );
-$dhea = $gform->process_tags( $settings['order_form_dhea'] ?? '', $form, $entry );
+$biest_8020_prog_testosterone = $gform->process_tags( $settings['order_form_biest_8020_prog_testosterone'] ?? '', $form, $entry );
+$biest_5050_prog_testosterone = $gform->process_tags( $settings['order_form_biest_5050_prog_testosterone'] ?? '', $form, $entry );
+$progesterone = $gform->process_tags( $settings['order_form_progesterone'] ?? '', $form, $entry );
 $testosterone = $gform->process_tags( $settings['order_form_testosterone'] ?? '', $form, $entry );
-
+$scream_cream = $gform->process_tags( $settings['order_form_scream_cream'] ?? '', $form, $entry );
+$anhydrous = $gform->process_tags( $settings['order_form_anhydrous'] ?? '', $form, $entry );
+$gel_cream = $gform->process_tags( $settings['order_form_gel_cream'] ?? '', $form, $entry );
+$solution = $gform->process_tags( $settings['order_form_solution'] ?? '', $form, $entry );
 $custom_estriol = $gform->process_tags( $settings['order_form_custom_estriol'] ?? '', $form, $entry );
 $custom_estradiol = $gform->process_tags( $settings['order_form_custom_estradiol'] ?? '', $form, $entry );
 $custom_estrone = $gform->process_tags( $settings['order_form_custom_estrone'] ?? '', $form, $entry );
 $custom_dhea = $gform->process_tags( $settings['order_form_custom_dhea'] ?? '', $form, $entry );
 $custom_progesterone = $gform->process_tags( $settings['order_form_custom_progesterone'] ?? '', $form, $entry );
 $custom_testosterone = $gform->process_tags( $settings['order_form_custom_testosterone'] ?? '', $form, $entry );
+$custom_formulations = $gform->process_tags( $settings['order_form_custom_formulations'] ?? '', $form, $entry );
+$custom_anhydrous = $gform->process_tags( $settings['order_form_custom_anhydrous'] ?? '', $form, $entry );
+$custom_gel_cream = $gform->process_tags( $settings['order_form_custom_gel_cream'] ?? '', $form, $entry );
+$custom_solution = $gform->process_tags( $settings['order_form_custom_solution'] ?? '', $form, $entry );
 
 $directions                 = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
 $quantity                   = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
@@ -395,78 +398,68 @@ $html_config = [
         <td style="border-right: 2px solid #000; border-left: 2px solid #000; border-bottom: 2px solid #000; padding: 6px; width: 40%;"><strong>Total # of scripts in this order:</strong>&nbsp;&nbsp;<?php echo esc_html( $scripts ) ?></td>
     </tr>
 </table>
-<span>All formulas are customizable. Please check off multiple ingredients for a combination capsule or troche.</span>
+<span>All formulas are customizable .</span>
 <p>&nbsp;</p>
 <!--  Prescription Table  -->
 <table style="width: 100%; border-collapse: collapse;">
     <tbody>
-    <tr style="width: 100%; text-align: left;">
-        <td style="width: 50%; height:30px;"><strong>Oral Capsules</strong></td>
-        <td style="width: 50%; height:30px;"><strong>Troche</strong></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $progesterone_sr ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone SR
-            <span class="underline">&nbsp;&nbsp;<?= $progesterone_sr ? esc_html( $progesterone_sr ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
-            <span class="underline">&nbsp;&nbsp;<?= $progesterone ? esc_html( $progesterone ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $pregnenolone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Pregnenolone
-            <span class="underline">&nbsp;&nbsp;<?= $pregnenolone ? esc_html( $pregnenolone ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
-            <span class="underline">&nbsp;&nbsp;<?= $estriol ? esc_html( $estriol ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $dhea_sr ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; DHEA SR
-            <span class="underline">&nbsp;&nbsp;<?= $dhea_sr ? esc_html( $dhea_sr ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
-            <span class="underline">&nbsp;&nbsp;<?= $estriol ? esc_html( $estriol ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;">&nbsp;</td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $estradiol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol
-            <span class="underline">&nbsp;&nbsp;<?= $estradiol ? esc_html( $estradiol ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;">&nbsp;</td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $dhea ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; DHEA
-            <span class="underline">&nbsp;&nbsp;<?= $dhea ? esc_html( $dhea ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;">&nbsp;</td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
-            <span class="underline">&nbsp;&nbsp;<?= $testosterone ? esc_html( $testosterone ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-</table>
-&nbsp;
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
     <tr>
+        <td style="width: 50%;"><strong>Topical Formulations</strong></td>
         <td style="width: 50%;"><strong>Custom Formulations</strong></td>
     </tr>
     <tr>
-        <td style="height:20px"><span class="box"><?= $custom_estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
-            <span class="underline">&nbsp;&nbsp;<?= $custom_estriol ? esc_html( $custom_estriol ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:20px; width: 50%;"><span class="box"><?= $estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
+            <span class="underline">&nbsp;&nbsp;<?= $estriol ? esc_html( $estriol ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+
+        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_estriol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estriol
+            <span class="underline">&nbsp;&nbsp;<?= $custom_estriol ? esc_html( $custom_estriol ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px"><span class="box"><?= $custom_estradiol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol
-            <span class="underline">&nbsp;&nbsp;<?= $custom_estradiol ? esc_html( $custom_estradiol ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:20px; width: 50%;"><span class="box"><?= $biest_8020_prog_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bi-Est 0.25mg (80/20)/Prog 25mg add Testosterone
+            <span class="underline">&nbsp;&nbsp;<?= $biest_8020_prog_testosterone ? esc_html( $biest_8020_prog_testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+
+        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_estradiol ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estradiol
+            <span class="underline">&nbsp;&nbsp;<?= $custom_estradiol ? esc_html( $custom_estradiol ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px"><span class="box"><?= $custom_estrone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estrone
-            <span class="underline">&nbsp;&nbsp;<?= $custom_estrone ? esc_html( $custom_estrone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:20px; width: 50%;"><span class="box"><?= $biest_5050_prog_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bi-Est 0.25mg (50/50)/Prog 25mg add Testosterone
+            <span class="underline">&nbsp;&nbsp;<?= $biest_5050_prog_testosterone ? esc_html( $biest_5050_prog_testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+
+        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_estrone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Estrone
+            <span class="underline">&nbsp;&nbsp;<?= $custom_estrone ? esc_html( $custom_estrone ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px"><span class="box"><?= $custom_dhea ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; DHEA
-            <span class="underline">&nbsp;&nbsp;<?= $custom_dhea ? esc_html( $custom_dhea ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:20px; width: 50%;"><span class="box"><?= $progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
+            <span class="underline">&nbsp;&nbsp;<?= $progesterone ? esc_html( $progesterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+
+        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_dhea ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; DHEA
+            <span class="underline">&nbsp;&nbsp;<?= $custom_dhea ? esc_html( $custom_dhea ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px"><span class="box"><?= $custom_progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
-            <span class="underline">&nbsp;&nbsp;<?= $custom_progesterone ? esc_html( $custom_progesterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:20px; width: 50%;"><span class="box"><?= $testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
+            <span class="underline">&nbsp;&nbsp;<?= $testosterone ? esc_html( $testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+
+        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_progesterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Progesterone
+            <span class="underline">&nbsp;&nbsp;<?= $custom_progesterone ? esc_html( $custom_progesterone ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="height:20px"><span class="box"><?= $custom_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
-            <span class="underline">&nbsp;&nbsp;<?= $custom_testosterone ? esc_html( $custom_testosterone ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="height:20px; width: 50%;"><span class="box"><?= $scream_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Scream Cream (Theophylline 2.4%/Arginine 6%/Ergoloid 0.05%/Pentoxifylline 5%/Sildenafil 1%/Testosterone 0.1%)
+            <span class="underline">&nbsp;&nbsp;<?= $scream_cream ? esc_html( $scream_cream ) . 'mg' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+
+        <td style="height:20px; width: 50%;"><span class="box"><?= $custom_testosterone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Testosterone
+            <span class="underline">&nbsp;&nbsp;<?= $custom_testosterone ? esc_html( $custom_testosterone ) . 'mg/g' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+    </tr>
+    <tr>
+        <td style="height:20px; width: 50%;">
+            <span class="box"><?= $anhydrous ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Anhydrous Gel&nbsp;&nbsp;&nbsp;
+            <span class="box"><?= $gel_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Cream&nbsp;&nbsp;&nbsp;
+            <span class="box"><?= $solution ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Solution
+        </td>
+        <td style="height:20px; width: 50%;">
+            <span class="box"><?= $custom_anhydrous ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Anhydrous Gel&nbsp;&nbsp;&nbsp;
+            <span class="box"><?= $custom_gel_cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Cream&nbsp;&nbsp;&nbsp;
+            <span class="box"><?= $custom_solution ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;Solution
+        </td>
     </tr>
     </tbody>
 </table>

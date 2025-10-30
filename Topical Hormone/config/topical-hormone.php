@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Oral Hormone
+ * Class Topical Hormone
  *
  * @package  GFPDF\Templates\Config
  *
  * @Internal See https://docs.gravitypdf.com/v6/install-template-via-template-manager for more information about this class
  */
-class Oral_Hormone extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
+class Topical_Hormone extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
 
 	/**
 	 * Return the templates configuration structure which control what extra fields will be shown in the "Template" tab when configuring a form's PDF.
@@ -124,7 +124,6 @@ class Oral_Hormone extends Helper_Abstract_Config_Settings implements Helper_Int
                 ],
                 
                 
-                
                 // Form Section
                 'order_form_prescription_section' => [
                     'id'    => 'order_form_prescription_section',
@@ -133,101 +132,136 @@ class Oral_Hormone extends Helper_Abstract_Config_Settings implements Helper_Int
                     'class' => 'gfpdf-no-padding',
                 ],
                 
-                'order_form_progesterone_sr' => [
-                    'id'         => 'order_form_progesterone_sr',
-                    'name'       => esc_html__( 'Progesterone SR', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                'order_form_estriol' => [
+                    'id' => 'order_form_estriol',
+                    'name' => esc_html__( 'Estriol 0.6%', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_pregnenolone' => [
-                    'id'         => 'order_form_pregnenolone',
-                    'name'       => esc_html__( 'Pregnenolone', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                'order_form_biest_8020_prog_testosterone' => [
+                    'id' => 'order_form_biest_8020_prog_testosterone',
+                    'name' => esc_html__( 'Bi-Est 0.25mg (80/20)/Prog 25mg add Testosterone 0.5mg/g or 1mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_dhea_sr' => [
-                    'id'         => 'order_form_dhea_sr',
-                    'name'       => esc_html__( 'DHEA SR', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                'order_form_biest_5050_prog_testosterone' => [
+                    'id' => 'order_form_biest_5050_prog_testosterone',
+                    'name' => esc_html__( 'Bi-Est 0.25mg (50/50)/Prog 25mg add Testosterone 0.5mg/g or 1mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_progesterone' => [
-                    'id'         => 'order_form_progesterone',
-                    'name'       => esc_html__( 'Progesterone', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_estriol' => [
-                    'id'         => 'order_form_estriol',
-                    'name'       => esc_html__( 'Estriol', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_estradiol' => [
-                    'id'         => 'order_form_estradiol',
-                    'name'       => esc_html__( 'Estradiol', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_dhea' => [
-                    'id'         => 'order_form_dhea',
-                    'name'       => esc_html__( 'DHEA', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_progesterone',
+                    'name' => esc_html__( 'Progesterone 5% / 10% / 20%', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_testosterone' => [
-                    'id'         => 'order_form_testosterone',
-                    'name'       => esc_html__( 'Testosterone', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_testosterone',
+                    'name' => esc_html__( 'Testosterone 0.2% / 1% / 2% / 5%', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_scream_cream' => [
+                    'id' => 'order_form_scream_cream',
+                    'name' => esc_html__( 'Scream Cream (Theophylline 2.4% / Arginine 6% / Ergoloid 0.05% / Pentoxifylline 5% / Sildenafil 1% / Testosterone 0.1%)', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_anhydrous' => [
+                    'id' => 'order_form_anhydrous',
+                    'name' => esc_html__( 'Anhydrous', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_gel_cream' => [
+                    'id' => 'order_form_gel_cream',
+                    'name' => esc_html__( 'Gel Cream', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_solution' => [
+                    'id' => 'order_form_solution',
+                    'name' => esc_html__( 'Solution', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_custom_estriol' => [
-                    'id'         => 'order_form_custom_estriol',
-                    'name'       => esc_html__( 'Custom Estriol', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_custom_estriol',
+                    'name' => esc_html__( 'Custom Estriol mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_custom_estradiol' => [
-                    'id'         => 'order_form_custom_estradiol',
-                    'name'       => esc_html__( 'Custom Estradiol', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_custom_estradiol',
+                    'name' => esc_html__( 'Custom Estradiol mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_custom_estrone' => [
-                    'id'         => 'order_form_custom_estrone',
-                    'name'       => esc_html__( 'Custom Estrone', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_custom_estrone',
+                    'name' => esc_html__( 'Custom Estrone mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_custom_dhea' => [
-                    'id'         => 'order_form_custom_dhea',
-                    'name'       => esc_html__( 'Custom DHEA', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_custom_dhea',
+                    'name' => esc_html__( 'Custom DHEA mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_custom_progesterone' => [
-                    'id'         => 'order_form_custom_progesterone',
-                    'name'       => esc_html__( 'Custom Progesterone', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_custom_progesterone',
+                    'name' => esc_html__( 'Custom Progesterone mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
                 'order_form_custom_testosterone' => [
-                    'id'         => 'order_form_custom_testosterone',
-                    'name'       => esc_html__( 'Custom Testosterone', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
+                    'id' => 'order_form_custom_testosterone',
+                    'name' => esc_html__( 'Custom Testosterone mg/g', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_custom_formulations' => [
+                    'id' => 'order_form_custom_formulations',
+                    'name' => esc_html__( 'Custom Formulations', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_custom_anhydrous' => [
+                    'id' => 'order_form_custom_anhydrous',
+                    'name' => esc_html__( 'Custom Anhydrous', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_custom_gel_cream' => [
+                    'id' => 'order_form_custom_gel_cream',
+                    'name' => esc_html__( 'Custom Gel Cream', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                
+                'order_form_custom_solution' => [
+                    'id' => 'order_form_custom_solution',
+                    'name' => esc_html__( 'Custom Solution', 'gravity-forms-pdf-extended' ),
+                    'type' => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
