@@ -181,15 +181,6 @@ class Numbing_Cream extends Helper_Abstract_Config_Settings implements Helper_In
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                /* Packaging / format choices */
-                'order_form_pump_jar_tube' => [
-                    'id'         => 'order_form_pump_jar_tube',
-                    'name'       => esc_html__( 'Pump / Jar / Tube', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                /* If you want separate fields for each packaging option */
                 'order_form_pump_choice' => [
                     'id'         => 'order_form_pump_choice',
                     'name'       => esc_html__( 'Pump', 'gravity-forms-pdf-extended' ),
@@ -216,9 +207,21 @@ class Numbing_Cream extends Helper_Abstract_Config_Settings implements Helper_In
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
+                'order_form_benzocaine' => [
+                    'id'         => 'order_form_benzocaine',
+                    'name'       => esc_html__( 'Benzocaine', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
                 'order_form_lidocaine_percent' => [
                     'id'         => 'order_form_lidocaine_percent',
                     'name'       => esc_html__( 'Lidocaine %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_lidocaine' => [
+                    'id'         => 'order_form_lidocaine',
+                    'name'       => esc_html__( 'Lidocaine', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
@@ -228,15 +231,33 @@ class Numbing_Cream extends Helper_Abstract_Config_Settings implements Helper_In
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
+                'order_form_tetracaine' => [
+                    'id'         => 'order_form_tetracaine',
+                    'name'       => esc_html__( 'Tetracaine', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
                 'order_form_phenylephrine_percent' => [
                     'id'         => 'order_form_phenylephrine_percent',
                     'name'       => esc_html__( 'Phenylephrine %', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
+                'order_form_phenylephrine' => [
+                    'id'         => 'order_form_phenylephrine',
+                    'name'       => esc_html__( 'Phenylephrine', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
                 'order_form_bupivacaine_percent' => [
                     'id'         => 'order_form_bupivacaine_percent',
                     'name'       => esc_html__( 'Bupivacaine %', 'gravity-forms-pdf-extended' ),
+                    'type'       => 'text',
+                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
+                ],
+                'order_form_bupivacaine' => [
+                    'id'         => 'order_form_bupivacaine',
+                    'name'       => esc_html__( 'Bupivacaine', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],

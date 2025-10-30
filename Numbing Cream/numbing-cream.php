@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Numbing Cream
- * Version: 1.0
+ * Version: 1.0.4
  * Description: Numbing Cream Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -78,10 +78,15 @@ $pump_jar_tube = $gform->process_tags( $settings['order_form_pump_jar_tube'] ?? 
 $customizable_formulation_checkbox = $gform->process_tags( $settings['order_form_customizable_formulation_checkbox'] ?? '', $form, $entry );
 
 /* Ingredient percents (free text fields for custom %) */
+$benzocaine = $gform->process_tags( $settings['order_form_benzocaine_percent'] ?? '', $form, $entry );
 $benzocaine_percent = $gform->process_tags( $settings['order_form_benzocaine_percent'] ?? '', $form, $entry );
+$lidocaine = $gform->process_tags( $settings['order_form_lidocaine_percent'] ?? '', $form, $entry );
 $lidocaine_percent = $gform->process_tags( $settings['order_form_lidocaine_percent'] ?? '', $form, $entry );
+$tetracaine = $gform->process_tags( $settings['order_form_tetracaine_percent'] ?? '', $form, $entry );
 $tetracaine_percent = $gform->process_tags( $settings['order_form_tetracaine_percent'] ?? '', $form, $entry );
+$phenylephrine = $gform->process_tags( $settings['order_form_phenylephrine_percent'] ?? '', $form, $entry );
 $phenylephrine_percent = $gform->process_tags( $settings['order_form_phenylephrine_percent'] ?? '', $form, $entry );
+$bupivacaine = $gform->process_tags( $settings['order_form_bupivacaine_percent'] ?? '', $form, $entry );
 $bupivacaine_percent = $gform->process_tags( $settings['order_form_bupivacaine_percent'] ?? '', $form, $entry );
 
 /* Packaging choices broken out if you want separate fields */
@@ -89,9 +94,7 @@ $pump_choice = $gform->process_tags( $settings['order_form_pump_choice'] ?? '', 
 $jar_choice = $gform->process_tags( $settings['order_form_jar_choice'] ?? '', $form, $entry );
 $tube_choice = $gform->process_tags( $settings['order_form_tube_choice'] ?? '', $form, $entry );
 
-
-
-    $directions                  = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
+$directions                 = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
 $quantity                   = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
 $refill                     = $gform->process_tags( $settings['order_form_refill'] ?? '', $form, $entry );
 
@@ -403,89 +406,71 @@ $html_config = [
         <td style="border-right: 2px solid #000; border-left: 2px solid #000; border-bottom: 2px solid #000; padding: 6px; width: 40%;"><strong>Total # of scripts in this order:</strong>&nbsp;&nbsp;<?php echo esc_html( $scripts ) ?></td>
     </tr>
 </table>
-<p>All formulas are customizable.</p>
+<span>If you need a formulation not listed below, please customize as needed.</span>
+<p>&nbsp;</p>
 &nbsp;
 <!--  Prescription Table  -->
 <table style="width: 100%; border-collapse: collapse;">
     <tbody>
-        <tr style="width: 100%; text-align: left;">
-            <td><strong>Face Creams</strong></td>
-        </tr>
         <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_12 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 12% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_8 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 8%/Tretinoin 0.1%/Fluocinolone 0.01% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $lidocaine_23_tetracaine_7 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lidocaine 23%/Tetracaine 7%</td>
         </tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_8_tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 8% Cream</td>
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_7_tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 7%/Tretinoin 0.05%/
-                Fluocinolone 0.01% Cream</td>
+        <tr style="height:70px;">
+            <td style="width: 50%;"><span class="box"><?= $benzocaine_20_lidocaine_10_tetracaine_10 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Benzocaine 20%/Lidocaine 10%/Tetracaine 10%</td>
         </tr>
-        <tr style="height:50px;">
-            <td style="width: 50%;"><span class="box"><?= $hydroquinone_4_tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone 4%/Tretinoin 0.025%/
-                Hydrocortisone 1%/Kojic Acid 4% Cream</td>
-            <td style="width: 50%;"></td>
+        <tr style="height:70px;">
+            <td style="width: 50%;"><span class="box"><?= $benzocaine_20_lidocaine_10_tetracaine_10_bupivacaine_4 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Benzocaine 20%/Lidocaine 10%/Tetracaine 10%/Bupivacaine 2%</td>
+        </tr>
+        <tr style="height:70px;">
+            <td style="width: 50%;"><span class="box"><?= $lidocaine_23_tetracaine_7_phenylephrine_1 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Benzocaine 20%/Lidocaine 10%/Tetracaine 10%/Bupivacaine 4%</td>
+        </tr>
+        <tr style="height:70px;">
+            <td style="width: 50%;"><span class="box"><?= $customizable_formulation ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lidocaine 23%/Tetracaine 7%/Phenylephrine 1%</td>
+        </tr>
+        <tr style="height:70px;">
+            <td style="width: 50%;"><span class="box"><?= $benzocaine_20_lidocaine_10_tetracaine_10_bupivacaine_2 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lidocaine 23%/Tetracaine 7%/Phenylephrine 2%</td>
         </tr>
     </tbody>
 </table>
 &nbsp;
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
-    <tr style="width: 100%; text-align: left;">
-        <td><strong>Acne Creams</strong></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_niacinamide_025 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.025%/Niacinamide 5% Cream</td>
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_niacinamide_05 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.1%/Niacinamide 5% Cream</td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_niacinamide_1 ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.05%/Niacinamide 5% Cream</td>
-        <td style="width: 50%;"><span class="box"><?= $tretinoin_clindamycin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin 0.025%/Clindamycin 1% Cream</td>
-    </tr>
-    </tbody>
-</table>
 &nbsp;
 <table style="width: 100%; border-collapse: collapse;">
     <tbody>
     <tr style="width: 100%; text-align: left;">
-        <td><strong>Custom Fomulations</strong></td>
+        <td><strong>Customizable Fomulations</strong></td>
     </tr>
     <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $tretinoin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tretinoin
-            <span class="underline">&nbsp;&nbsp;<?= $tretinoin_percent ? esc_html( $tretinoin_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $kojic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Kojic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $kojic_percent ? esc_html( $kojic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"><span class="box"><?= $vitamin_e ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Vitamin E
-            <span class="underline">&nbsp;&nbsp;<?= $vitamin_e_percent ? esc_html( $vitamin_e_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 33%;"><span class="box"><?= $benzocaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Benzocaine
+            <span class="underline">&nbsp;&nbsp;<?= $benzocaine_percent ? esc_html( $benzocaine_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 33%;"><span class="box"><?= $lidocaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tetracaine
+            <span class="underline">&nbsp;&nbsp;<?= $lidocaine_percent ? esc_html( $lidocaine_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 34%;"><span class="box"><?= $tetracaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bupivacaine E
+            <span class="underline">&nbsp;&nbsp;<?= $tetracaine_percent ? esc_html( $tetracaine_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $hydroquinone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydroquinone
-            <span class="underline">&nbsp;&nbsp;<?= $hydroquinone_percent ? esc_html( $hydroquinone_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $azelaic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Azelaic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $azelaic_percent ? esc_html( $azelaic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"><span class="box"><?= $lipoic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lipoic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $lipoic_percent ? esc_html( $lipoic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $fluocinolone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Fluocinolone
-            <span class="underline">&nbsp;&nbsp;<?= $fluocinolone_percent ? esc_html( $fluocinolone_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $niacinamide ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Niacinamide
-            <span class="underline">&nbsp;&nbsp;<?= $niacinamide_percent ? esc_html( $niacinamide_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 33%;"><span class="box"><?= $phenylephrine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lidocaine
+            <span class="underline">&nbsp;&nbsp;<?= $phenylephrine_percent ? esc_html( $phenylephrine_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 33%;"><span class="box"><?= $bupivacaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Phenylephrine
+            <span class="underline">&nbsp;&nbsp;<?= $bupivacaine_percent ? esc_html( $bupivacaine_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
         <td style="width: 34%;"></td>
     </tr>
+</table>
+&nbsp;
+<table style="width: 100%; border-collapse: collapse;">
+    <tbody>
     <tr style="height:50px;">
-        <td style="width: 33%;"><span class="box"><?= $ascorbic ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Ascorbic Acid
-            <span class="underline">&nbsp;&nbsp;<?= $ascorbic_percent ? esc_html( $ascorbic_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 33%;"><span class="box"><?= $hydrocortisone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Hydrocortisone
-            <span class="underline">&nbsp;&nbsp;<?= $hydrocortisone_percent ? esc_html( $hydrocortisone_percent ) . '%' : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 34%;"></td>
+        <td style="width: 33%;">
+            <span class="box"><?= $pump_choice ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Pump&nbsp;&nbsp;&nbsp;
+            <span class="box"><?= $jar_choice ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Jar&nbsp;&nbsp;&nbsp;
+            <span class="box"><?= $tube_choice ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tube&nbsp;&nbsp;&nbsp;
+        </td>
     </tr>
-    </tbody>
 </table>
 &nbsp;
 <table style="width: 100%; border-collapse: collapse;">
     <tbody>
     <tr>
-        <td style="width: 100%; height: 30px;"><strong>Directions:</strong> <span class="underline">&nbsp;&nbsp;<?php echo esc_html( $directions ) ?>&nbsp;&nbsp;</span></td>
+        <td style="width: 100%; height: 30px;"><strong>Directions:</strong> <span class="underline">&nbsp;&nbsp;<?php echo $directions ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
         <td style="width: 100%; height: 30px;">
@@ -495,7 +480,7 @@ $html_config = [
     </tr>
     </tbody>
 </table>
-
+<p>&nbsp;</p>
 <!-- Footer Table -->
 &nbsp;
 &nbsp;
