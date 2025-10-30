@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Topical Pain Management
+ * Class Oral Hormone
  *
  * @package  GFPDF\Templates\Config
  *
  * @Internal See https://docs.gravitypdf.com/v6/install-template-via-template-manager for more information about this class
  */
-class Topical_Pain_Management extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
+class Oral_Hormone extends Helper_Abstract_Config_Settings implements Helper_Interface_Config {
 
 	/**
 	 * Return the templates configuration structure which control what extra fields will be shown in the "Template" tab when configuring a form's PDF.
@@ -124,6 +124,7 @@ class Topical_Pain_Management extends Helper_Abstract_Config_Settings implements
                 ],
                 
                 
+                
                 // Form Section
                 'order_form_prescription_section' => [
                     'id'    => 'order_form_prescription_section',
@@ -132,124 +133,100 @@ class Topical_Pain_Management extends Helper_Abstract_Config_Settings implements
                     'class' => 'gfpdf-no-padding',
                 ],
                 
-                /* ============================
-   SETTINGS ARRAYS
-   ============================ */
-                
-                'order_form_diclofenac' => [
-                    'id'         => 'order_form_diclofenac',
-                    'name'       => esc_html__( 'Diclofenac', 'gravity-forms-pdf-extended' ),
+                'order_form_progesterone_sr' => [
+                    'id'         => 'order_form_progesterone_sr',
+                    'name'       => esc_html__( 'Progesterone SR', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_bupivicaine' => [
-                    'id'         => 'order_form_bupivicaine',
-                    'name'       => esc_html__( 'Bupivicaine', 'gravity-forms-pdf-extended' ),
+                'order_form_pregnenolone' => [
+                    'id'         => 'order_form_pregnenolone',
+                    'name'       => esc_html__( 'Pregnenolone', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_ketoprofen' => [
-                    'id'         => 'order_form_ketoprofen',
-                    'name'       => esc_html__( 'Ketoprofen', 'gravity-forms-pdf-extended' ),
+                'order_form_dhea_sr' => [
+                    'id'         => 'order_form_dhea_sr',
+                    'name'       => esc_html__( 'DHEA SR', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_tetracaine' => [
-                    'id'         => 'order_form_tetracaine',
-                    'name'       => esc_html__( 'Tetracaine', 'gravity-forms-pdf-extended' ),
+                'order_form_progesterone' => [
+                    'id'         => 'order_form_progesterone',
+                    'name'       => esc_html__( 'Progesterone', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_meloxicam' => [
-                    'id'         => 'order_form_meloxicam',
-                    'name'       => esc_html__( 'Meloxicam', 'gravity-forms-pdf-extended' ),
+                'order_form_estriol' => [
+                    'id'         => 'order_form_estriol',
+                    'name'       => esc_html__( 'Estriol', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_clonidine' => [
-                    'id'         => 'order_form_clonidine',
-                    'name'       => esc_html__( 'Clonidine', 'gravity-forms-pdf-extended' ),
+                'order_form_estradiol' => [
+                    'id'         => 'order_form_estradiol',
+                    'name'       => esc_html__( 'Estradiol', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_amitriptyline' => [
-                    'id'         => 'order_form_amitriptyline',
-                    'name'       => esc_html__( 'Amitriptyline', 'gravity-forms-pdf-extended' ),
+                'order_form_dhea' => [
+                    'id'         => 'order_form_dhea',
+                    'name'       => esc_html__( 'DHEA', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_tirzanidine' => [
-                    'id'         => 'order_form_tirzanidine',
-                    'name'       => esc_html__( 'Tirzanidine', 'gravity-forms-pdf-extended' ),
+                'order_form_testosterone' => [
+                    'id'         => 'order_form_testosterone',
+                    'name'       => esc_html__( 'Testosterone', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_gabapentin' => [
-                    'id'         => 'order_form_gabapentin',
-                    'name'       => esc_html__( 'Gabapentin', 'gravity-forms-pdf-extended' ),
+                'order_form_custom_estriol' => [
+                    'id'         => 'order_form_custom_estriol',
+                    'name'       => esc_html__( 'Custom Estriol', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_capsaicin' => [
-                    'id'         => 'order_form_capsaicin',
-                    'name'       => esc_html__( 'Capsaicin', 'gravity-forms-pdf-extended' ),
+                'order_form_custom_estradiol' => [
+                    'id'         => 'order_form_custom_estradiol',
+                    'name'       => esc_html__( 'Custom Estradiol', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_topiramate' => [
-                    'id'         => 'order_form_topiramate',
-                    'name'       => esc_html__( 'Topiramate', 'gravity-forms-pdf-extended' ),
+                'order_form_custom_estrone' => [
+                    'id'         => 'order_form_custom_estrone',
+                    'name'       => esc_html__( 'Custom Estrone', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_baclofen' => [
-                    'id'         => 'order_form_baclofen',
-                    'name'       => esc_html__( 'Baclofen', 'gravity-forms-pdf-extended' ),
+                'order_form_custom_dhea' => [
+                    'id'         => 'order_form_custom_dhea',
+                    'name'       => esc_html__( 'Custom DHEA', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_lidocaine' => [
-                    'id'         => 'order_form_lidocaine',
-                    'name'       => esc_html__( 'Lidocaine', 'gravity-forms-pdf-extended' ),
+                'order_form_custom_progesterone' => [
+                    'id'         => 'order_form_custom_progesterone',
+                    'name'       => esc_html__( 'Custom Progesterone', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],
                 
-                'order_form_cyclobenzaprine' => [
-                    'id'         => 'order_form_cyclobenzaprine',
-                    'name'       => esc_html__( 'Cyclobenzaprine', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_diazepam' => [
-                    'id'         => 'order_form_diazepam',
-                    'name'       => esc_html__( 'Diazepam', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                
-                'order_form_cream' => [
-                    'id'         => 'order_form_cream',
-                    'name'       => esc_html__( 'Cream', 'gravity-forms-pdf-extended' ),
-                    'type'       => 'text',
-                    'inputClass' => 'merge-tag-support mt-hide_all_fields',
-                ],
-                'order_form_suppository' => [
-                    'id'         => 'order_form_suppository',
-                    'name'       => esc_html__( 'Suppository', 'gravity-forms-pdf-extended' ),
+                'order_form_custom_testosterone' => [
+                    'id'         => 'order_form_custom_testosterone',
+                    'name'       => esc_html__( 'Custom Testosterone', 'gravity-forms-pdf-extended' ),
                     'type'       => 'text',
                     'inputClass' => 'merge-tag-support mt-hide_all_fields',
                 ],

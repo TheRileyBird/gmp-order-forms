@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Topical Pain Management
- * Version: 1.2.2
- * Description: Topical Pain Management Order Form
+ * Template Name: Semaglutide Sublingual
+ * Version: 1.4
+ * Description: Semaglutide Sublingual Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -63,31 +63,29 @@ $npi_dea                   = $gform->process_tags( $settings['order_form_prescri
 $date                      = $gform->process_tags( $settings['order_form_prescriber_date'] ?? '', $form, $entry );
 $signature                 = $gform->process_tags( $settings['order_form_prescriber_signature'] ?? '', $form, $entry );
 
-$billing_options           = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
-$billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
+$billing_options = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
+$billing_options = array_map( 'trim', explode( ',', $billing_options ) );
 
-$diclofenac       = $gform->process_tags( $settings['order_form_diclofenac'] ?? '', $form, $entry );
-$bupivicaine      = $gform->process_tags( $settings['order_form_bupivicaine'] ?? '', $form, $entry );
-$ketoprofen       = $gform->process_tags( $settings['order_form_ketoprofen'] ?? '', $form, $entry );
-$tetracaine       = $gform->process_tags( $settings['order_form_tetracaine'] ?? '', $form, $entry );
-$meloxicam        = $gform->process_tags( $settings['order_form_meloxicam'] ?? '', $form, $entry );
-$clonidine        = $gform->process_tags( $settings['order_form_clonidine'] ?? '', $form, $entry );
-$amitriptyline    = $gform->process_tags( $settings['order_form_amitriptyline'] ?? '', $form, $entry );
-$tirzanidine      = $gform->process_tags( $settings['order_form_tirzanidine'] ?? '', $form, $entry );
-$gabapentin       = $gform->process_tags( $settings['order_form_gabapentin'] ?? '', $form, $entry );
-$capsaicin        = $gform->process_tags( $settings['order_form_capsaicin'] ?? '', $form, $entry );
-$topiramate       = $gform->process_tags( $settings['order_form_topiramate'] ?? '', $form, $entry );
-$baclofen         = $gform->process_tags( $settings['order_form_baclofen'] ?? '', $form, $entry );
-$lidocaine        = $gform->process_tags( $settings['order_form_lidocaine'] ?? '', $form, $entry );
-$cyclobenzaprine  = $gform->process_tags( $settings['order_form_cyclobenzaprine'] ?? '', $form, $entry );
-$diazepam         = $gform->process_tags( $settings['order_form_diazepam'] ?? '', $form, $entry );
+$option_1 = $gform->process_tags( $settings['order_form_option_1'] ?? '', $form, $entry );
+$refill_1 = $gform->process_tags( $settings['order_form_refill_1'] ?? '', $form, $entry );
 
-$cream              = $gform->process_tags( $settings['order_form_cream'] ?? '', $form, $entry );
-$suppository        = $gform->process_tags( $settings['order_form_suppository'] ?? '', $form, $entry );
+$option_2 = $gform->process_tags( $settings['order_form_option_2'] ?? '', $form, $entry );
+$refill_2 = $gform->process_tags( $settings['order_form_refill_2'] ?? '', $form, $entry );
 
-$directions                 = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
-$quantity                   = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
-$refill                     = $gform->process_tags( $settings['order_form_refill'] ?? '', $form, $entry );
+$option_3 = $gform->process_tags( $settings['order_form_option_3'] ?? '', $form, $entry );
+$refill_3 = $gform->process_tags( $settings['order_form_refill_3'] ?? '', $form, $entry );
+
+$option_4 = $gform->process_tags( $settings['order_form_option_4'] ?? '', $form, $entry );
+$refill_4 = $gform->process_tags( $settings['order_form_refill_4'] ?? '', $form, $entry );
+
+$option_5 = $gform->process_tags( $settings['order_form_option_5'] ?? '', $form, $entry );
+$refill_5 = $gform->process_tags( $settings['order_form_refill_5'] ?? '', $form, $entry );
+
+$option_6 = $gform->process_tags( $settings['order_form_option_6'] ?? '', $form, $entry );
+$refill_6 = $gform->process_tags( $settings['order_form_refill_6'] ?? '', $form, $entry );
+
+$other = $gform->process_tags( $settings['order_form_other'] ?? '', $form, $entry );
+$quantity = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
 
 /*
  * Load our core-specific styles from our PDF settings which will be passed to the PDF template $config array
@@ -133,7 +131,7 @@ $html_config = [
 
   /* Handle GF2.5+ Columns */
   .grid {
-    float: <?php echo ( $settings['rtl'] ?? 'No' ) === 'Yes' ? 'right' : '&nbsp;&nbsp;&nbsp;left'; ?>;
+    float: <?php echo ( $settings['rtl'] ?? 'No' ) === 'Yes' ? 'right' : 'left'; ?>;
   }
 
   .grid .inner-container {
@@ -352,8 +350,8 @@ $html_config = [
     }
     .box {
         display: inline-block;
-        width: 8mm;
-        height: 8mm;
+        width: 6mm;
+        height: 6mm;
         border: 1px solid #000;
         text-align: center;
         line-height: 6mm;
@@ -362,7 +360,7 @@ $html_config = [
 </style>
 
 <!-- Form Title -->
-<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : '&nbsp;&nbsp;&nbsp;'; ?></div>
+<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : ''; ?></div>
 
 <!-- Patient Information Table -->
 <table style="width: 100%; border-collapse: collapse;">
@@ -397,82 +395,55 @@ $html_config = [
         <td style="border-right: 2px solid #000; border-left: 2px solid #000; border-bottom: 2px solid #000; padding: 6px; width: 40%;"><strong>Total # of scripts in this order:</strong>&nbsp;&nbsp;<?php echo esc_html( $scripts ) ?></td>
     </tr>
 </table>
-<span>All formulas are customizable so please ask if you need a medication/strength not listed below. Check off multiple ingredients for a combination cream or suppository.</span>
-<p>&nbsp;</p>
-<!--  Prescription Table  -->
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $diclofenac ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Diclofenac
-            <span class="underline">&nbsp;&nbsp;<?= $diclofenac ? esc_html( $diclofenac ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $bupivicaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Bupivicaine
-            <span class="underline">&nbsp;&nbsp;<?= $bupivicaine ? esc_html( $bupivicaine ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $ketoprofen ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Ketoprofen
-            <span class="underline">&nbsp;&nbsp;<?= $ketoprofen ? esc_html( $ketoprofen ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $tetracaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tetracaine
-            <span class="underline">&nbsp;&nbsp;<?= $tetracaine ? esc_html( $tetracaine ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $meloxicam ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Meloxicam
-            <span class="underline">&nbsp;&nbsp;<?= $meloxicam ? esc_html( $meloxicam ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $clonidine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Clonidine
-            <span class="underline">&nbsp;&nbsp;<?= $clonidine ? esc_html( $clonidine ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $amitriptyline ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Amitriptyline
-            <span class="underline">&nbsp;&nbsp;<?= $amitriptyline ? esc_html( $amitriptyline ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $tirzanidine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Tirzanidine
-            <span class="underline">&nbsp;&nbsp;<?= $tirzanidine ? esc_html( $tirzanidine ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $gabapentin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Gabapentin
-            <span class="underline">&nbsp;&nbsp;<?= $gabapentin ? esc_html( $gabapentin ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $capsaicin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Capsaicin
-            <span class="underline">&nbsp;&nbsp;<?= $capsaicin ? esc_html( $capsaicin ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $topiramate ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Topiramate
-            <span class="underline">&nbsp;&nbsp;<?= $topiramate ? esc_html( $topiramate ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $baclofen ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Baclofen
-            <span class="underline">&nbsp;&nbsp;<?= $baclofen ? esc_html( $baclofen ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr style="height:50px;">
-        <td style="width: 50%; height:30px;"><span class="box"><?= $lidocaine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Lidocaine
-            <span class="underline">&nbsp;&nbsp;<?= $lidocaine ? esc_html( $lidocaine ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-        <td style="width: 50%; height:30px;"><span class="box"><?= $cyclobenzaprine ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Cyclobenzaprine
-            <span class="underline">&nbsp;&nbsp;<?= $cyclobenzaprine ? esc_html( $cyclobenzaprine ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
-    </tr>
-</table>
 &nbsp;
+<p>&nbsp;</p>
+<!-- Content -->
 <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+    <tr style="background-color: #f7f7f7;">
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;">Check to<br>Prescribe</th>
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;">Refills:</th>
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; text-align: center;"></th>
+        <th style="border: 2px solid #000; padding: 8px; text-align: left; text-align: center; width: 15%; text-align: center;"></th>
+    </tr>
+    </thead>
     <tbody>
     <tr>
-        <td style="width: 100%; height: 30px;">
-            <strong>Cream:</strong>&nbsp;<span class="box"><?= $cream ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <strong>Suppository:</strong>&nbsp;&nbsp;<span class="box"><?= $suppository ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>
-        </td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $option_1 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
+        <td style="border: 2px solid #000; padding: 8px;">Place 0.25ml (0.5mg) under the tongue once daily for one week then increase to 0.5ml (1mg) once daily thereafter *</td>
+        <td style="border: 2px solid #000; padding: 8px; text-align: center;">QTY:<br>15 ML</td>
     </tr>
+    <tr>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $option_2 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
+        <td style="border: 2px solid #000; padding: 8px;">Place 0.5ml (1mg) under the tongue once daily *</td>
+        <td style="border: 2px solid #000; padding: 8px; text-align: center;">QTY:<br>20 ML</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $option_3 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
+        <td style="border: 2px solid #000; padding: 8px;">Place 0.75ml (1.5mg) under the tongue once daily *</td>
+        <td style="border: 2px solid #000; padding: 8px; text-align: center;">QTY:<br>25 ML</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $option_4 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
+        <td style="border: 2px solid #000; padding: 8px;">Place 1ml (2mg) under the tongue once daily *</td>
+        <td style="border: 2px solid #000; padding: 8px; text-align: center;">QTY:<br>35 ML</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $option_5 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
+        <td style="border: 2px solid #000; padding: 8px;">Other: <span class="underline"> <?php echo $other ?></span></td>
+        <td style="border: 2px solid #000; padding: 8px; text-align: center;">QTY:<br><?php echo esc_html( $quantity ) ?></td>
+    </tr>
+
     </tbody>
 </table>
 
-<table style="width: 100%; border-collapse: collapse;">
-    <tbody>
-    <tr>
-        <td style="width: 100%; height: 30px;"><strong>Directions:</strong> <span class="underline">&nbsp;&nbsp;<?php echo $directions ?>&nbsp;&nbsp;</span></td>
-    </tr>
-    <tr>
-        <td style="width: 100%; height: 30px;">
-            <strong>Qty:</strong> <span class="underline">&nbsp;&nbsp; <?php echo esc_html( $quantity ) ?> &nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
-            <strong>Refills:</strong> <span class="underline">&nbsp;&nbsp; <?php echo esc_html( $refill ) ?> &nbsp;&nbsp;</span>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<p>&nbsp;</p>
+<p>*administer at least 30 <strong>minutes</strong> before eating and wait at least 90 <strong>seconds</strong> before swallowing</p>
 <!-- Footer Table -->
-&nbsp;
 &nbsp;
 &nbsp;
 <table style="width: 100%; border-collapse: collapse;">
