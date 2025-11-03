@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Semaglutide L-Carnitine
- * Version: 1.2
- * Description: Semaglutide L-Carnitine Order Form
+ * Template Name: Wart Antifungal
+ * Version: 1.0.1
+ * Description: Wart Antifungal Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -63,31 +63,31 @@ $npi_dea                   = $gform->process_tags( $settings['order_form_prescri
 $date                      = $gform->process_tags( $settings['order_form_prescriber_date'] ?? '', $form, $entry );
 $signature                 = $gform->process_tags( $settings['order_form_prescriber_signature'] ?? '', $form, $entry );
 
-$billing_options = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
-$billing_options = array_map( 'trim', explode( ',', $billing_options ) );
+$billing_options           = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
+$billing_options           = array_map( 'trim', explode( ',', $billing_options ) );
 
-$lcarnitine = $gform->process_tags( $settings['order_form_lcarnitine'] ?? '', $form, $entry );
-$lcarnitine_options = $gform->process_tags( $settings['order_form_lcarnitine_options'] ?? '', $form, $entry );
-$lcarnitine_options = array_map( 'trim', explode( ',', $lcarnitine_options ) );
-$lcarnitine_other = $gform->process_tags( $settings['order_form_lcarnitine_other'] ?? '', $form, $entry );
+$salicylic_lactic_formaldehyde = $gform->process_tags( $settings['order_form_salicylic_lactic_formaldehyde'] ?? '', $form, $entry );
+$salicylic_5fu_dmso = $gform->process_tags( $settings['order_form_salicylic_5fu_dmso'] ?? '', $form, $entry );
+$salicylic_white_petrolatum = $gform->process_tags( $settings['order_form_salicylic_white_petrolatum'] ?? '', $form, $entry );
+$cimetidine_deoxy_ibuprofen = $gform->process_tags( $settings['order_form_cimetidine_deoxy_ibuprofen'] ?? '', $form, $entry );
+$squaric_acid = $gform->process_tags( $settings['order_form_squaric_acid'] ?? '', $form, $entry );
+$dinitrochlorobenzene = $gform->process_tags( $settings['order_form_dinitrochlorobenzene'] ?? '', $form, $entry );
+$dinitrochlorobenzene_quantity = $gform->process_tags( $settings['order_form_dinitrochlorobenzene_quantity'] ?? '', $form, $entry );
+$diphenylcyclopropenone = $gform->process_tags( $settings['order_form_diphenylcyclopropenone'] ?? '', $form, $entry );
 
-$month_1 = $gform->process_tags( $settings['order_form_month_1'] ?? '', $form, $entry );
-$refill_1 = $gform->process_tags( $settings['order_form_refill_1'] ?? '', $form, $entry );
+$terbinafine_dmso = $gform->process_tags( $settings['order_form_terbinafine_dmso'] ?? '', $form, $entry );
+$terbinafine_tea_ibuprofen_dmso = $gform->process_tags( $settings['order_form_terbinafine_tea_ibuprofen_dmso'] ?? '', $form, $entry );
+$itraconazole_ibuprofen_dmso = $gform->process_tags( $settings['order_form_itraconazole_ibuprofen_dmso'] ?? '', $form, $entry );
+$ketoconazole_dmso = $gform->process_tags( $settings['order_form_ketoconazole_dmso'] ?? '', $form, $entry );
 
-$month_2 = $gform->process_tags( $settings['order_form_month_2'] ?? '', $form, $entry );
-$refill_2 = $gform->process_tags( $settings['order_form_refill_2'] ?? '', $form, $entry );
+$cantharadin = $gform->process_tags( $settings['order_form_cantharadin'] ?? '', $form, $entry );
+$cantharadin_quantity = $gform->process_tags( $settings['order_form_cantharadin_quantity'] ?? '', $form, $entry );
+$cantharadin_plus = $gform->process_tags( $settings['order_form_cantharadin_plus'] ?? '', $form, $entry );
+$cantharadin_plus_quantity = $gform->process_tags( $settings['order_form_cantharadin_plus_quantity'] ?? '', $form, $entry );
 
-$month_3 = $gform->process_tags( $settings['order_form_month_3'] ?? '', $form, $entry );
-$refill_3 = $gform->process_tags( $settings['order_form_refill_3'] ?? '', $form, $entry );
-
-$month_4 = $gform->process_tags( $settings['order_form_month_4'] ?? '', $form, $entry );
-$refill_4 = $gform->process_tags( $settings['order_form_refill_4'] ?? '', $form, $entry );
-
-$month_5 = $gform->process_tags( $settings['order_form_month_5'] ?? '', $form, $entry );
-$refill_5 = $gform->process_tags( $settings['order_form_refill_5'] ?? '', $form, $entry );
-
-$month_6 = $gform->process_tags( $settings['order_form_month_6'] ?? '', $form, $entry );
-$refill_6 = $gform->process_tags( $settings['order_form_refill_6'] ?? '', $form, $entry );
+$directions                  = $gform->process_tags( $settings['order_form_directions'] ?? '', $form, $entry );
+$quantity                   = $gform->process_tags( $settings['order_form_quantity'] ?? '', $form, $entry );
+$refill                     = $gform->process_tags( $settings['order_form_refill'] ?? '', $form, $entry );
 
 /*
  * Load our core-specific styles from our PDF settings which will be passed to the PDF template $config array
@@ -133,7 +133,7 @@ $html_config = [
 
   /* Handle GF2.5+ Columns */
   .grid {
-    float: <?php echo ( $settings['rtl'] ?? 'No' ) === 'Yes' ? 'right' : 'left'; ?>;
+    float: <?php echo ( $settings['rtl'] ?? 'No' ) === 'Yes' ? 'right' : '&nbsp;&nbsp;&nbsp;left'; ?>;
   }
 
   .grid .inner-container {
@@ -352,8 +352,8 @@ $html_config = [
     }
     .box {
         display: inline-block;
-        width: 6mm;
-        height: 6mm;
+        width: 8mm;
+        height: 8mm;
         border: 1px solid #000;
         text-align: center;
         line-height: 6mm;
@@ -362,7 +362,7 @@ $html_config = [
 </style>
 
 <!-- Form Title -->
-<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : ''; ?></div>
+<div id="form-title"><?php echo $show_form_title ? wp_kses_post( $form_data['form_title'] ) : '&nbsp;&nbsp;&nbsp;'; ?></div>
 
 <!-- Patient Information Table -->
 <table style="width: 100%; border-collapse: collapse;">
@@ -397,95 +397,71 @@ $html_config = [
         <td style="border-right: 2px solid #000; border-left: 2px solid #000; border-bottom: 2px solid #000; padding: 6px; width: 40%;"><strong>Total # of scripts in this order:</strong>&nbsp;&nbsp;<?php echo esc_html( $scripts ) ?></td>
     </tr>
 </table>
+<p>All formulas are customizable.</p>
 &nbsp;
-
-<!-- Content -->
-<div class="text-center"><?php if ( $lcarnitine ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of semaglutide indicated below along with the addition of l-carnitine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
-
-<div id="lcarnitine_options" class="text-center"><span class="underline">L-Carnitine Indications:</span> &nbsp;
-    <?php
-        $lcarnitine_choices = [
-                'lcarnitine-deficiency'    => 'Carnitine deficiency',
-                'lcarnitine-fatigue'       => 'Fatigue',
-                'lcarnitine-nausea'        => 'Nausea',
-                'lcarnitine-other'         => 'Other',
-        ];
-
-        foreach ( $lcarnitine_choices as $id => $label ) {
-            if ( in_array( $label, $lcarnitine_options, true ) ) {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&#10004;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '&nbsp;</span> &nbsp;&nbsp;';
-            } else {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&nbsp;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
-            }
-        }
-    ?>
-    <?php if ( $lcarnitine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $lcarnitine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
-</div>
-
-<table style="width: 100%; border-collapse: collapse;">
-    <tr>
-        <td style="border: 2px solid #fff; padding: 6px; width: 50%; vertical-align: bottom; text-align: right;"><strong>Prescriber Attestation Signature:</strong><span class="bottomline">&nbsp;&nbsp;<?php if ( ! empty( $signature ) ) {
-                    echo '<img src="' . esc_attr( $signature . '&t=1' ) . '" height="12mm" />';
-                }
-                ?>&nbsp;&nbsp;</span></td>
-        <td style="border: 2px solid #fff; padding: 6px; width: 50%; vertical-align: bottom;"><strong>Date:&nbsp;</strong><span class="underline">&nbsp;&nbsp;<?php echo esc_html( $date ) ?>&nbsp;&nbsp;</span></td>
-    </tr>
-</table>
-&nbsp;
-
 <!--  Prescription Table  -->
 <table style="width: 100%; border-collapse: collapse;">
-    <thead>
-    <tr style="background-color: #f7f7f7;">
-        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;">Check below to prescribe</th>
-        <th style="border: 2px solid #000; padding: 8px; text-align: left; width: 15%; text-align: center;"># of Refills</th>
-        <th style="border: 2px solid #000; padding: 8px; text-align: left; text-align: center;">Combination Dosage</th>
-    </tr>
-    </thead>
+    <tbody>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $salicylic_lactic_formaldehyde ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Salicylic Acid 20% / Lactic Acid 10% / Formaldehyde 8% In Flexible Collodion</td>
+            <td style="width: 50%;"><span class="box"><?= $terbinafine_dmso ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Terbinafine 1.67% / DMSO Nail Solution</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $salicylic_5fu_dmso ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Salicylic Acid 20% / 5-FU 5% In DMSO</td>
+            <td style="width: 50%;"><span class="box"><?= $terbinafine_tea_ibuprofen_dmso ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Terbinafine 1.67% / Tea Tree Oil 10% / Ibuprofen 2% / DMSO Nail Solution</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $salicylic_white_petrolatum ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Salicylic Acid 50% In White Petrolatum</td>
+            <td style="width: 50%;"><span class="box"><?= $itraconazole_ibuprofen_dmso ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Itraconazole 1% / Ibuprofen 2% / DMSO Nail Solution</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $cimetidine_deoxy_ibuprofen ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Cimetidine/Deoxy-D-Glucose/Ibuprofen 10%/ 0.29%/ 2% Cream</td>
+            <td style="width: 50%;"><span class="box"><?= $ketoconazole_dmso ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Ketoconazole 2% / DMSO Nail Solution</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $squaric_acid ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Squaric Acid Dibutyl Ester 0.1% Topical Solution</td>
+            <td style="width: 50%;"></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $dinitrochlorobenzene ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Dinitrochlorobenzene Ointment
+                <span class="underline">&nbsp;&nbsp;<?= $dinitrochlorobenzene_quantity ? esc_html( $dinitrochlorobenzene_quantity ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+            <td style="width: 50%;"></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $diphenylcyclopropenone ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Diphenylcyclopropenone 0.01% Topical Solution</td>
+            <td style="width: 50%;"></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $cantharadin ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Cantharadin &nbsp;&nbsp;&nbsp; Qty:
+            <span class="underline">&nbsp;&nbsp;<?= $cantharadin_quantity ? esc_html( $cantharadin_quantity ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+            <td style="width: 50%;"></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="height:50px;">
+            <td style="width: 50%;"><span class="box"><?= $cantharadin_plus ? '&#10004;' : '&nbsp;&nbsp;&nbsp;' ?></span>&nbsp; Cantharadin Plus &nbsp;&nbsp;&nbsp; Qty:
+            <span class="underline">&nbsp;&nbsp;<?= $cantharadin_plus_quantity ? esc_html( $cantharadin_plus_quantity ) : '&nbsp;' ?>&nbsp;&nbsp;</span></td>
+            <td style="width: 50%;"></td>
+        </tr>
+    </tbody>
+</table>
+&nbsp;
+&nbsp;
+<table style="width: 100%; border-collapse: collapse;">
     <tbody>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_1 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 1 – Week 4</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
-            <em>Inject 8 units (0.21mg) subcutaneously once weekly.</em>
-        </td>
+        <td style="width: 100%; height: 30px;"><strong>Directions:</strong> <span class="underline">&nbsp;&nbsp;<?php echo $directions ?>&nbsp;&nbsp;</span></td>
     </tr>
     <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_2 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 5 – Week 8</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
-            <em>Inject 16 units (0.42mg) subcutaneously once weekly.</em>
-        </td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_3 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 9 – Week 12</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
-            <em>Inject 32 units (0.85mg) subcutaneously once weekly.</em>
-        </td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_4 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 13 – Week 16</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
-            <em>Inject 57 units (1.51mg) subcutaneously once weekly.</em>
-        </td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_5 ) : ?>&#10004;<?php endif; ?></td>
-        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
-        <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 17 – continuing</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
-            <em>Inject 100 units (2.65mg) subcutaneously once weekly.</em>
+        <td style="width: 100%; height: 30px;">
+            <strong>Qty:</strong> <span class="underline">&nbsp;&nbsp; <?php echo esc_html( $quantity ) ?> &nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            <strong>Refills:</strong> <span class="underline">&nbsp;&nbsp; <?php echo esc_html( $refill ) ?> &nbsp;&nbsp;</span>
         </td>
     </tr>
     </tbody>

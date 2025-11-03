@@ -1,9 +1,9 @@
 <?php
 
 /*
- * Template Name: Semaglutide L-Carnitine
- * Version: 1.2
- * Description: Semaglutide L-Carnitine Order Form
+ * Template Name: Semaglutide Glycine
+ * Version: 1.2.1
+ * Description: Semaglutide Glycine Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
  * Group: Team Riley Web
@@ -66,10 +66,10 @@ $signature                 = $gform->process_tags( $settings['order_form_prescri
 $billing_options = $gform->process_tags( $settings['order_form_billing_options'] ?? '', $form, $entry );
 $billing_options = array_map( 'trim', explode( ',', $billing_options ) );
 
-$lcarnitine = $gform->process_tags( $settings['order_form_lcarnitine'] ?? '', $form, $entry );
-$lcarnitine_options = $gform->process_tags( $settings['order_form_lcarnitine_options'] ?? '', $form, $entry );
-$lcarnitine_options = array_map( 'trim', explode( ',', $lcarnitine_options ) );
-$lcarnitine_other = $gform->process_tags( $settings['order_form_lcarnitine_other'] ?? '', $form, $entry );
+$glycine = $gform->process_tags( $settings['order_form_glycine'] ?? '', $form, $entry );
+$glycine_options = $gform->process_tags( $settings['order_form_glycine_options'] ?? '', $form, $entry );
+$glycine_options = array_map( 'trim', explode( ',', $glycine_options ) );
+$glycine_other = $gform->process_tags( $settings['order_form_glycine_other'] ?? '', $form, $entry );
 
 $month_1 = $gform->process_tags( $settings['order_form_month_1'] ?? '', $form, $entry );
 $refill_1 = $gform->process_tags( $settings['order_form_refill_1'] ?? '', $form, $entry );
@@ -398,28 +398,26 @@ $html_config = [
     </tr>
 </table>
 &nbsp;
-
 <!-- Content -->
-<div class="text-center"><?php if ( $lcarnitine ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of semaglutide indicated below along with the addition of l-carnitine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
+<div class="text-center"><?php if ( $glycine ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of semaglutide indicated below along with the addition of Glycine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
 
 <div id="lcarnitine_options" class="text-center"><span class="underline">L-Carnitine Indications:</span> &nbsp;
     <?php
-        $lcarnitine_choices = [
-                'lcarnitine-deficiency'    => 'Carnitine deficiency',
-                'lcarnitine-fatigue'       => 'Fatigue',
-                'lcarnitine-nausea'        => 'Nausea',
-                'lcarnitine-other'         => 'Other',
+        $glycine_choices = [
+                'fatigue'       => 'Fatigue',
+                'nausea'        => 'Muscle Loss',
+                'other'         => 'Other',
         ];
 
-        foreach ( $lcarnitine_choices as $id => $label ) {
-            if ( in_array( $label, $lcarnitine_options, true ) ) {
+        foreach ( $glycine_choices as $id => $label ) {
+            if ( in_array( $label, $glycine_options, true ) ) {
                 echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&#10004;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '&nbsp;</span> &nbsp;&nbsp;';
             } else {
                 echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&nbsp;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
             }
         }
     ?>
-    <?php if ( $lcarnitine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $lcarnitine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
+    <?php if ( $glycine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $glycine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -448,7 +446,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
             <span class="underline bold">Week 1 – Week 4</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
+            Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 8 units (0.21mg) subcutaneously once weekly.</em>
         </td>
     </tr>
@@ -457,7 +455,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
             <span class="underline bold">Week 5 – Week 8</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
+            Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 16 units (0.42mg) subcutaneously once weekly.</em>
         </td>
     </tr>
@@ -466,7 +464,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
             <span class="underline bold">Week 9 – Week 12</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
+            Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 32 units (0.85mg) subcutaneously once weekly.</em>
         </td>
     </tr>
@@ -475,7 +473,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
             <span class="underline bold">Week 13 – Week 16</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
+            Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 57 units (1.51mg) subcutaneously once weekly.</em>
         </td>
     </tr>
@@ -484,7 +482,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
             <span class="underline bold">Week 17 – continuing</span><br>
-            Semaglutide- L-Carnitine 2.65mg- 100mg/ml<br>
+            Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 100 units (2.65mg) subcutaneously once weekly.</em>
         </td>
     </tr>
