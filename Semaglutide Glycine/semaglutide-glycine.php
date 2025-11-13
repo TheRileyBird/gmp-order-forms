@@ -445,7 +445,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_1 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 1 – Week 4</span><br>
+            <span class="underline bold">Month 1</span><br>
             Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 8 units (0.21mg) subcutaneously once weekly.</em>
         </td>
@@ -454,7 +454,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_2 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 5 – Week 8</span><br>
+            <span class="underline bold">Month 2</span><br>
             Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 16 units (0.42mg) subcutaneously once weekly.</em>
         </td>
@@ -463,7 +463,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_3 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 9 – Week 12</span><br>
+            <span class="underline bold">Month 3</span><br>
             Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 32 units (0.85mg) subcutaneously once weekly.</em>
         </td>
@@ -472,7 +472,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_4 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 13 – Week 16</span><br>
+            <span class="underline bold">Month 4</span><br>
             Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 57 units (1.51mg) subcutaneously once weekly.</em>
         </td>
@@ -481,7 +481,7 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_5 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 17 – continuing</span><br>
+            <span class="underline bold">Month 5 – continuing</span><br>
             Semaglutide-Glycine 2.65mg- 100mg/ml<br>
             <em>Inject 100 units (2.65mg) subcutaneously once weekly.</em>
         </td>
