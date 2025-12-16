@@ -402,23 +402,7 @@ $html_config = [
 <!-- Content -->
 <div class="text-center"><?php if ( $methylcobalamin ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of methylcobalamin is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
 
-<div id="b12_options" class="text-center"><span class="underline">B12 Indications:</span> &nbsp;
-    <?php
-        $b12_choices = [
-                'b12-deficiency'    => 'B12 deficiency',
-                'b12-fatigue'       => 'Fatigue',
-                'b12-nausea'        => 'Nausea',
-                'b12-other'         => 'Other',
-        ];
-
-        foreach ( $b12_choices as $id => $label ) {
-            if ( in_array( $label, $b12_options, true ) ) {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&#10004;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '&nbsp;</span> &nbsp;&nbsp;';
-            } else {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&nbsp;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
-            }
-        }
-    ?>
+<div id="b12_options" class="text-center"><span class="underline">Alternate dosing/B12 Indications:</span> &nbsp;
     <?php if ( $b12_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $b12_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 

@@ -401,22 +401,7 @@ $html_config = [
 <!-- Content -->
 <div class="text-center"><?php if ( $glycine ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of Glycine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
 
-<div id="lcarnitine_options" class="text-center"><span class="underline">L-Carnitine Indications:</span> &nbsp;
-    <?php
-        $glycine_choices = [
-                'fatigue'       => 'Fatigue',
-                'nausea'        => 'Muscle Loss',
-                'other'         => 'Other',
-        ];
-
-        foreach ( $glycine_choices as $id => $label ) {
-            if ( in_array( $label, $glycine_options, true ) ) {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&#10004;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '&nbsp;</span> &nbsp;&nbsp;';
-            } else {
-                echo '<span class="box" id="' . esc_attr( $id ) . '">&nbsp;&nbsp;&nbsp;</span> &nbsp; <span>' . esc_html( $label ) . '</span> &nbsp;';
-            }
-        }
-    ?>
+<div id="lcarnitine_options" class="text-center"><span class="underline">Alternate dosing/L-Carnitine Indications:</span> &nbsp;
     <?php if ( $glycine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $glycine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
