@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Tirzepatide Glycine
- * Version: 1.2.1
+ * Version: 1.2.2
  * Description: Tirzepatide Glycine Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -399,9 +399,7 @@ $html_config = [
 </table>
 &nbsp;
 <!-- Content -->
-<div class="text-center"><?php if ( $glycine ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of tirzepatide indicated below along with the addition of Glycine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
-
-<div id="lcarnitine_options" class="text-center"><span class="underline">Alternate dosing/L-Carnitine Indications:</span> &nbsp;
+<div id="lcarnitine_options" class="text-center">Alternate dosing/L-Carnitine Indications: &nbsp;
     <?php if ( $glycine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $glycine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 

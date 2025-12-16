@@ -2,7 +2,7 @@
 
 /*
  * Template Name: Semaglutide L-Carnitine
- * Version: 1.2
+ * Version: 1.3
  * Description: Semaglutide L-Carnitine Order Form
  * Author: Gravity PDF
  * Author URI: https://gravitypdf.com
@@ -400,9 +400,7 @@ $html_config = [
 &nbsp;
 
 <!-- Content -->
-<div class="text-center"><?php if ( $lcarnitine ) : ?><span class="box">&#10004;</span><?php else: ?><span class="box">&#10008;</span><?php endif; ?> &nbsp; The dose of semaglutide indicated below along with the addition of l-carnitine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.</div> &nbsp;
-
-<div id="lcarnitine_options" class="text-center"><span class="underline">Alternate dosing/L-Carnitine Indication:</span> &nbsp;
+<div id="lcarnitine_options" class="text-center">Alternate dosing/L-Carnitine Indication: &nbsp;
     <?php if ( $lcarnitine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $lcarnitine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
