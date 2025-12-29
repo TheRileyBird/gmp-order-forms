@@ -399,7 +399,7 @@ $html_config = [
 </table>
 &nbsp;
 <!-- Content -->
-<div id="lcarnitine_options" class="text-center">Alternate dosing/L-Carnitine Indications: &nbsp;
+<div id="lcarnitine_options" class="text-center">Alternate dosing/Gylcine Indications: &nbsp;
     <?php if ( $glycine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $glycine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
@@ -428,8 +428,8 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_1 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_1 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 1 – Week 4</span><br>
-            Tirzepatide-Glycine 16.75mg- 1mg/ml<br>
+            <span class="underline bold">Month 1</span><br>
+            Tirzepatide-Glycine 16.75mg - 5mg/ml<br>
             <em>Inject 12 units (2mg) subcutaneously once weekly.</em>
         </td>
     </tr>
@@ -437,8 +437,8 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_2 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_2 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 5 – Week 8</span><br>
-            Tirzepatide-Glycine 16.75mg- 1mg/ml<br>
+            <span class="underline bold">Month 2</span><br>
+            Tirzepatide-Glycine 16.75mg - 5mg/ml<br>
             <em>Inject 24 units (4mg) subcutaneously every week.</em>
         </td>
     </tr>
@@ -446,8 +446,8 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_3 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_3 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 9 – Week 12</span><br>
-            Tirzepatide-Glycine 16.75mg- 1mg/ml<br>
+            <span class="underline bold">Month 3</span><br>
+            Tirzepatide-Glycine 16.75mg - 5mg/ml<br>
             <em>Inject 36 units (6mg) subcutaneously every week.</em>
         </td>
     </tr>
@@ -455,8 +455,8 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_4 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_4 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 13 – Week 16</span><br>
-            Tirzepatide-Glycine 16.75mg- 1mg/ml<br>
+            <span class="underline bold">Month 4</span><br>
+            Tirzepatide-Glycine 16.75mg - 5mg/ml<br>
             <em>Inject 51 units (8.5mg) subcutaneously every week.</em>
         </td>
     </tr>
@@ -464,8 +464,17 @@ $html_config = [
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_5 ) : ?>&#10004;<?php endif; ?></td>
         <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_5 ) ?></td>
         <td style="border: 2px solid #000; padding: 8px;">
-            <span class="underline bold">Week 17 – continuing</span><br>
-            Tirzepatide-Glycine 16.75mg- 1mg/ml<br>
+            <span class="underline bold">Month 5</span><br>
+            Tirzepatide-Glycine 16.75mg - 5mg/ml<br>
+            <em>Inject 67 units (11.22mg) subcutaneously every week.</em>
+        </td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php if ( $month_6 ) : ?>&#10004;<?php endif; ?></td>
+        <td style="border: 2px solid #000; height: 40px; text-align: center; font-size: 20px;"><?php echo esc_html( $refill_6 ) ?></td>
+        <td style="border: 2px solid #000; padding: 8px;">
+            <span class="underline bold">Month 6</span><br>
+            Tirzepatide-Glycine 16.75mg - 5mg/ml<br>
             <em>Inject 100 units (16.7mg) subcutaneously every week.</em>
         </td>
     </tr>
