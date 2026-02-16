@@ -400,6 +400,9 @@ $html_config = [
 &nbsp;
 <!-- Content -->
 <div id="lcarnitine_options" class="text-center">Alternate dosing/Gylcine Indications: &nbsp;
+    <div class="text-center">
+        <span class="box">&#10004;</span> &nbsp; The dose of tirzepatide indicated below along with the addition of Glycine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.
+    </div>
     <?php if ( $glycine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $glycine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
