@@ -400,10 +400,10 @@ $html_config = [
 &nbsp;
 
 <!-- Content -->
+<div class="text-center">
+    <span class="box">&#10004;</span> &nbsp; The dose of semaglutide indicated below along with the addition of L-Carnitine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.
+</div>
 <div id="lcarnitine_options" class="text-center">Alternate dosing/L-Carnitine Indication: &nbsp;
-    <div class="text-center">
-        <span class="box">&#10004;</span> &nbsp; The dose of semaglutide indicated below along with the addition of L-Carnitine is necessary to be compounded, as its use in combination produces a clinically significant difference for this patient.
-    </div>
     <?php if ( $lcarnitine_other ) : ?><span class="underline">&nbsp;<?php echo esc_html( $lcarnitine_other ) ?>&nbsp;&nbsp;</span><?php endif; ?>
 </div>
 
